@@ -22,8 +22,7 @@ public class McAnimBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(joystick.Horizontal);
-
+        
         if (animator != null)
         {
             if (joystick.Horizontal < 0) // if player is moving left

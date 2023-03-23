@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MainCharacter
+  - Other
   layers:
   - Default
   - TransparentFX
@@ -13,6 +15,7 @@ TagManager:
   - UI
   - Ground
   - Stairs
+  - 1st floor
   - 
   - 
   - 
@@ -35,8 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - MainCharacter
   m_SortingLayers:
   - name: Default
     uniqueID: 0
