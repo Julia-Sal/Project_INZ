@@ -58,18 +58,19 @@
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\Obj_Movements.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\Obj_change_layer.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\collider.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McMovementControler.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\Env_behaviour.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Environment_scripts\Obj_Movements.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
