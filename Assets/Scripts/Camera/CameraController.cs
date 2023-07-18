@@ -53,7 +53,6 @@ public class CameraController : MonoBehaviour
 
         if (mainCamera.fieldOfView != targetZoom)
         {
-            Debug.Log(targetZoom);
             mainCamera.fieldOfView = Mathf.MoveTowards(mainCamera.fieldOfView, targetZoom, zoomSpeed);
         }
     }
@@ -62,12 +61,10 @@ public class CameraController : MonoBehaviour
     {
         if (isZoomedIn)
         {
-            Debug.Log("Powrót do normalnego");
             return originalZoom;
         }
         else 
         {
-            Debug.Log("Przybli¿enie");
             return 30f;
         }
     }
