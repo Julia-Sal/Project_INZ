@@ -37,6 +37,7 @@ public class McAnimBehaviour : MonoBehaviour
                 }
                 else if (joystick.Vertical < 0 && joystick.Horizontal > -0.35) //if player is moving down
                 {
+                    animator.ResetTrigger("TriggerIdle");
                     animator.SetTrigger("TriggerRunDown");
                     movingDownObject.SetActive(true);
                     movingLeftObject.SetActive(false);
@@ -64,6 +65,7 @@ public class McAnimBehaviour : MonoBehaviour
                 }
                 else if (joystick.Vertical < 0 && joystick.Horizontal < 0.35) //if player is moving down
                 {
+                    animator.ResetTrigger("TriggerIdle"); 
                     animator.SetTrigger("TriggerRunDown");
                     movingDownObject.SetActive(true);
                     movingLeftObject.SetActive(false);
@@ -81,6 +83,7 @@ public class McAnimBehaviour : MonoBehaviour
             }
             else if (joystick.Vertical == 0 && joystick.Horizontal == 0)
             {
+                animator.ResetTrigger("TriggerRunDown");
                 animator.SetTrigger("TriggerIdle");
                 movingDownObject.SetActive(true);
                 movingLeftObject.SetActive(false);
@@ -88,7 +91,16 @@ public class McAnimBehaviour : MonoBehaviour
                 movingUpObject.SetActive(false);
 
             }
-           
+            else
+            {
+                animator.SetTrigger("TriggerRunDown");
+                movingDownObject.SetActive(true);
+                movingLeftObject.SetActive(false);
+                movingRightObject.SetActive(false);
+                movingUpObject.SetActive(false);
+
+            }
+
         }
     }
 
