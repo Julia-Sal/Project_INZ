@@ -21,11 +21,13 @@ public class Obj_change_layer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        sortingGroup.sortingOrder = 0;
+        sortingGroup.sortingOrder = 6;
+        Debug.Log(sortingGroup.sortingOrder);
     }
 
     private void OnTriggerExit(Collider other)
     {
         sortingGroup.sortingOrder = 1;
+        Debug.Log(sortingGroup.sortingOrder);
     }
 }
