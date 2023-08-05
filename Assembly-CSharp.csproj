@@ -68,10 +68,11 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McMovementControler.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\NightVision.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\Env_behaviour.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Camera\NightVision.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildings_behaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
