@@ -6,19 +6,6 @@ public class Env_behaviour : MonoBehaviour
 {
     public GameObject floor;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        
-    }
-
     private void OnTriggerEnter(Collider other) 
     { 
         floor.SetActive(false); 
@@ -26,6 +13,11 @@ public class Env_behaviour : MonoBehaviour
     private void OnTriggerExit(Collider other) 
     {
         floor.SetActive(true); 
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        floor.SetActive(false);
     }
 
 }

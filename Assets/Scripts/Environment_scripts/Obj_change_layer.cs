@@ -27,7 +27,7 @@ public class Obj_change_layer : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        sortingGroup.sortingOrder = 1;
+        sortingGroup.sortingOrder = 4;
         Debug.Log(sortingGroup.sortingOrder);
     }
 }
