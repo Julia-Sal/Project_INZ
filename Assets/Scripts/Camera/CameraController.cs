@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CameraController : MonoBehaviour
-{/*
+{
     public float zoomSpeed = 2.0f;
     public float zoomAmount = 1.0f;
     public float defaultZoom = 60.0f;
@@ -68,5 +68,5 @@ public class CameraController : MonoBehaviour
             return 30f;
         }
     }
-    */
+    
 }

@@ -20,7 +20,6 @@ public class FrontBuildings_behaviour : MonoBehaviour
 
     void ChangeMaterialAlpha(float newAlpha)
     {
-        Debug.Log(newAlpha);
         Color color = material.color;
         color.a = newAlpha;
         material.color = color;

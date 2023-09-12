@@ -29,7 +29,9 @@ public class McAnimBehaviour : MonoBehaviour
             {
                 if (joystick.Vertical > 0 && joystick.Horizontal > -0.35) // if player is moving up
                 {
-                    animator.SetTrigger("TriggerRunUp");
+                    animator.ResetTrigger("TriggerIdle");
+                    animator.ResetTrigger("TriggerRunDown");
+;                   animator.SetTrigger("TriggerRunUp");
                     movingDownObject.SetActive(false);
                     movingLeftObject.SetActive(false);
                     movingRightObject.SetActive(false);
@@ -37,6 +39,7 @@ public class McAnimBehaviour : MonoBehaviour
                 }
                 else if (joystick.Vertical < 0 && joystick.Horizontal > -0.35) //if player is moving down
                 {
+                    
                     animator.ResetTrigger("TriggerIdle");
                     animator.SetTrigger("TriggerRunDown");
                     movingDownObject.SetActive(true);
@@ -46,6 +49,9 @@ public class McAnimBehaviour : MonoBehaviour
                 }
                 else
                 {
+                    
+                    animator.ResetTrigger("TriggerIdle");
+                    animator.ResetTrigger("TriggerRunDown");
                     animator.SetTrigger("TriggerRunHorizontal"); // set trigger for running animation
                     movingRightObject.SetActive(false); // wy³¹cz model postaci id¹cej w prawo
                     movingDownObject.SetActive(false);
@@ -57,6 +63,9 @@ public class McAnimBehaviour : MonoBehaviour
             {
                 if (joystick.Vertical > 0 && joystick.Horizontal < 0.35) // if player is moving up
                 {
+                    
+                    animator.ResetTrigger("TriggerIdle");
+                    animator.ResetTrigger("TriggerRunDown");
                     animator.SetTrigger("TriggerRunUp");
                     movingDownObject.SetActive(false);
                     movingLeftObject.SetActive(false);
@@ -65,6 +74,7 @@ public class McAnimBehaviour : MonoBehaviour
                 }
                 else if (joystick.Vertical < 0 && joystick.Horizontal < 0.35) //if player is moving down
                 {
+                    
                     animator.ResetTrigger("TriggerIdle"); 
                     animator.SetTrigger("TriggerRunDown");
                     movingDownObject.SetActive(true);
@@ -74,6 +84,9 @@ public class McAnimBehaviour : MonoBehaviour
                 }
                 else
                 {
+                    
+                    animator.ResetTrigger("TriggerIdle");
+                    animator.ResetTrigger("TriggerRunDown");
                     animator.SetTrigger("TriggerRunHorizontal"); // set trigger for running animation
                     movingLeftObject.SetActive(false); // wy³¹cz model postaci id¹cej w lewo
                     movingDownObject.SetActive(false);
@@ -83,17 +96,9 @@ public class McAnimBehaviour : MonoBehaviour
             }
             else if (joystick.Vertical == 0 && joystick.Horizontal == 0)
             {
+               
                 animator.ResetTrigger("TriggerRunDown");
                 animator.SetTrigger("TriggerIdle");
-                movingDownObject.SetActive(true);
-                movingLeftObject.SetActive(false);
-                movingRightObject.SetActive(false);
-                movingUpObject.SetActive(false);
-
-            }
-            else
-            {
-                animator.SetTrigger("TriggerRunDown");
                 movingDownObject.SetActive(true);
                 movingLeftObject.SetActive(false);
                 movingRightObject.SetActive(false);
