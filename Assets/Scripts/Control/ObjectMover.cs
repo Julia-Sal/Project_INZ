@@ -40,11 +40,11 @@ public class ObjectMover : MonoBehaviour
                 case TouchPhase.Moved:
                     if (isMoving)
                     {
-                        gameObject.GetComponent<Collider>().enabled = false;
-                       
                         rb.constraints |= RigidbodyConstraints.FreezePositionY;
+                        gameObject.GetComponent<Collider>().enabled = false;
+                        
 
-                        /*
+                        /* WERSJA Z DELT¥
                         // Convert touch.position to Vector3
                         Vector3 touchPos = new Vector3(touch.position.x, 0, touch.position.y);
                         Debug.Log("touch x: "+touchPos.x);
@@ -56,6 +56,7 @@ public class ObjectMover : MonoBehaviour
                         //Debug.Log("new x: " + newPosition.x);
                         transform.position = newPosition;*/
 
+                        //WERSJA Z KAMER¥ I PUNKTEM DOTYKU
                         Vector3 touchPos = new Vector3(touch.position.x, touch.position.y, 0);
                         Debug.Log("touch x: " + touchPos.x);
 
@@ -65,11 +66,7 @@ public class ObjectMover : MonoBehaviour
                         {
                             // Get the hit point on the object's plane.
                             Vector3 targetPosition = hit1.point;
-
-                            // Ensure the object stays at the same y-coordinate as its starting position.
                             targetPosition.y = objectStartPos.y;
-
-                            // Update the object's position.
                             transform.position = targetPosition;
                         }
 
@@ -77,7 +74,6 @@ public class ObjectMover : MonoBehaviour
                     break;
 
                 case TouchPhase.Ended:
-
                     gameObject.GetComponent<Collider>().enabled = true;
                     rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
                     isMoving = false;

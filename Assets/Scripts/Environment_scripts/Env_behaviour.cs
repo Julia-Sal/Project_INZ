@@ -7,17 +7,26 @@ public class Env_behaviour : MonoBehaviour
     public GameObject floor;
 
     private void OnTriggerEnter(Collider other) 
-    { 
-        floor.SetActive(false); 
+    {
+        if (other.CompareTag("MainCharacter"))
+        {
+            floor.SetActive(false);
+        }
     }
     private void OnTriggerExit(Collider other) 
     {
-        floor.SetActive(true); 
+        if (other.CompareTag("MainCharacter"))
+        {
+            floor.SetActive(true);
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        floor.SetActive(false);
+        if (other.CompareTag("MainCharacter"))
+        {
+            floor.SetActive(false);
+        }
     }
 
 }

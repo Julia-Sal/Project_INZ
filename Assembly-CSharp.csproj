@@ -74,6 +74,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Control\ObjectMover.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\Env_behaviour.cs" />
+    <Compile Include="Assets\Scripts\Control\Inventory.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
