@@ -47,8 +47,6 @@ public class CameraController : MonoBehaviour
                     lastTapTime = Time.time;
                 }
             }
-
-
         }
 
         if (mainCamera.fieldOfView != targetZoom)
