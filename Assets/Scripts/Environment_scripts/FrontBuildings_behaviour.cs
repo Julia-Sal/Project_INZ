@@ -8,14 +8,20 @@ public class FrontBuildings_behaviour : MonoBehaviour
     private float newAlpha = 0.3f;
     private float standardAlpha = 1.0f;
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider other)
     {
-        ChangeMaterialAlpha(newAlpha);
+        if (other.CompareTag("MainCharacter"))
+        {
+            ChangeMaterialAlpha(newAlpha);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ChangeMaterialAlpha(standardAlpha);
+        if (other.CompareTag("MainCharacter"))
+        {
+            ChangeMaterialAlpha(standardAlpha);
+        }
     }
 
     void ChangeMaterialAlpha(float newAlpha)

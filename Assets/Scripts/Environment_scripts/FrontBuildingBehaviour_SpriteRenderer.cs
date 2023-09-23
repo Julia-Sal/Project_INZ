@@ -8,14 +8,19 @@ public class FrontBuildingBehaviour_SpriteRenderer : MonoBehaviour
     private float newAlpha = 0.3f;
     private float standardAlpha = 1.0f;
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("MainCharacter")) { 
         ChangeSpriteAlpha(newAlpha);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ChangeSpriteAlpha(standardAlpha);
+        if (other.CompareTag("MainCharacter"))
+        {
+            ChangeSpriteAlpha(standardAlpha);
+        }
     }
 
     void ChangeSpriteAlpha(float newAlpha)

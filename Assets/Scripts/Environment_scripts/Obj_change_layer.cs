@@ -14,20 +14,20 @@ public class Obj_change_layer : MonoBehaviour
         sortingGroup = stairs.GetComponent<SortingGroup>();
     }
 
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        sortingGroup.sortingOrder = 6;
-        Debug.Log(sortingGroup.sortingOrder);
+        if (other.CompareTag("MainCharacter"))
+        {
+            sortingGroup.sortingOrder = 6;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        sortingGroup.sortingOrder = 4;
-        Debug.Log(sortingGroup.sortingOrder);
+        if (other.CompareTag("MainCharacter"))
+        {
+            sortingGroup.sortingOrder = 4;
+            Debug.Log(sortingGroup.sortingOrder);
+        }
     }
 }

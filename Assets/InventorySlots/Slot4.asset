@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ae708dd23f0a214ab934061a895b2fa, type: 3}
-  m_Name: Shovel
+  m_Script: {fileID: 11500000, guid: 687f6c84b16b8d7469c03b8fd157dea5, type: 3}
+  m_Name: Slot4
   m_EditorClassIdentifier: 
-  id: 1
+  itemSlot: 4
   item: {fileID: 8283491965065381371, guid: 3fc7ac6fcf057f345a28586d45a43179, type: 3}

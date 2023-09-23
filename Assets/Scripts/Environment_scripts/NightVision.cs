@@ -27,8 +27,11 @@ public class NightVision : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter(Collider collider) {
-        isNight = true;
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("MainCharacter"))
+        {
+            isNight = true;
+        }
     }
     
 

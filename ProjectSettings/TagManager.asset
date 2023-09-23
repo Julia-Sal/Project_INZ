@@ -8,6 +8,7 @@ TagManager:
   - Other
   - UI
   - Item
+  - InventoryButton
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Ground
   - Stairs
   - 1st floor
-  - 
+  - Items
   - 
   - 
   - 
