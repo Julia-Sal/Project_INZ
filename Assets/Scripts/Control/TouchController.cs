@@ -44,6 +44,7 @@ public class TouchController : MonoBehaviour
                 case TouchPhase.Ended:
                     if (isMoving && selectedObject != null)
                     {
+                        selectedObject.GetComponent<Pickup>().resetPickup();
                         itemGotMoved(touch);
                     }
                     break;

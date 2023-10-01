@@ -12,7 +12,8 @@ public class InventoryController : MonoBehaviour
     private GameObject objectFromInventory;
 
     public void OnPointerExit() {
-        if (!checkIfSlotIsEmpty()) {
+        
+        if (!checkIfSlotIsEmpty()) {Debug.Log("take item from inventory1");
             objectFromInventory = inventorySlot.item;
             takeItemFromInventory();
         }       
@@ -21,7 +22,7 @@ public class InventoryController : MonoBehaviour
     private void takeItemFromInventory() { 
         if (Input.touchCount > 0) {
             Touch touch = Input.GetTouch(0);
-
+            Debug.Log("take item from inventory");
             if (touch.phase == TouchPhase.Moved) {
                 Vector3 touchPos = new Vector3(touch.position.x, touch.position.y, 0);
                 Ray ray = Camera.main.ScreenPointToRay(touchPos);
@@ -44,7 +45,8 @@ public class InventoryController : MonoBehaviour
     }
 
     public void OnPointerEnter(){
-        if (lastDragged.id != 0 && checkIfSlotIsEmpty()) {
+        
+        if (lastDragged.id != 0 && checkIfSlotIsEmpty()) {Debug.Log("add item to inventory");
             setImage(lastDragged);
             inventorySlot.item = lastDragged.item;
             lastDragged.id = 0;
@@ -52,7 +54,9 @@ public class InventoryController : MonoBehaviour
     }
 
     public bool checkIfSlotIsEmpty() {
+        Debug.Log("check if slot is empty");
         return image.sprite.Equals(defaultSprite);
+
     }
 
 }
