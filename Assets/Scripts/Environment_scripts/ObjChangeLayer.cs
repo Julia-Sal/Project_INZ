@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Obj_change_layer : MonoBehaviour
+public class ObjChangeLayer : MonoBehaviour
 {
-    public Transform stairs; // The object whose Sorting Group will be changed
+    public Transform transform; // Zmieniany obiekt
+    public int onTriggerEnterLayer;
+    public int onTriggerExitLayer;
 
     private UnityEngine.Rendering.SortingGroup sortingGroup; // Reference to the Sorting Group component
 
     void Start()
     {
-        sortingGroup = stairs.GetComponent<SortingGroup>();
+        sortingGroup = transform.GetComponent<SortingGroup>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("MainCharacter"))
         {
-            sortingGroup.sortingOrder = 6;
+            sortingGroup.sortingOrder = onTriggerEnterLayer;
         }
     }
 
@@ -26,7 +28,7 @@ public class Obj_change_layer : MonoBehaviour
     {
         if (other.CompareTag("MainCharacter"))
         {
-            sortingGroup.sortingOrder = 4;
+            sortingGroup.sortingOrder = onTriggerExitLayer;
             Debug.Log(sortingGroup.sortingOrder);
         }
     }

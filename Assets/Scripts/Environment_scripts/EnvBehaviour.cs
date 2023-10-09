@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Env_behaviour : MonoBehaviour
+public class EnvBehaviour : MonoBehaviour
 {
-    public GameObject floor;
+    public GameObject gameObject;
 
     private void OnTriggerEnter(Collider other) 
     {
         if (other.CompareTag("MainCharacter"))
         {
-            floor.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
     private void OnTriggerExit(Collider other) 
     {
         if (other.CompareTag("MainCharacter"))
         {
-            floor.SetActive(true);
+            gameObject.SetActive(true);
         }
     }
 
@@ -25,7 +23,7 @@ public class Env_behaviour : MonoBehaviour
     {
         if (other.CompareTag("MainCharacter"))
         {
-            floor.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 

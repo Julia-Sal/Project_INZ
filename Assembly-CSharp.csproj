@@ -59,11 +59,10 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildings_behaviour.cs" />
-    <Compile Include="Assets\Scripts\Environment_scripts\Obj_Movements.cs" />
     <Compile Include="Assets\Scripts\Control\InventorySlotsManager.cs" />
     <Compile Include="Assets\Scripts\Control\ItemController.cs" />
     <Compile Include="Assets\Scripts\Control\TouchController.cs" />
-    <Compile Include="Assets\Scripts\Environment_scripts\Obj_change_layer.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\ObjChangeLayer.cs" />
     <Compile Include="Assets\Scripts\Control\InventoryController.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\collider.cs" />
@@ -79,7 +78,7 @@
     <Compile Include="Assets\Scripts\Environment_scripts\NightVision.cs" />
     <Compile Include="Assets\Scripts\Control\InventorySlot.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
-    <Compile Include="Assets\Scripts\Environment_scripts\Env_behaviour.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\EnvBehaviour.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>

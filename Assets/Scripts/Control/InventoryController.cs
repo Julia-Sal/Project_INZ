@@ -13,7 +13,7 @@ public class InventoryController : MonoBehaviour
 
     public void OnPointerExit() {
         
-        if (!checkIfSlotIsEmpty()) {Debug.Log("take item from inventory1");
+        if (!checkIfSlotIsEmpty()) {
             objectFromInventory = inventorySlot.item;
             takeItemFromInventory();
         }       
@@ -40,6 +40,7 @@ public class InventoryController : MonoBehaviour
     public void setImage(Item lastDragged){
         if (image != null && lastDragged != null && inventorySlot.item != null) {
             SpriteRenderer itemSpriteRenderer = inventorySlot.item.GetComponentInChildren<SpriteRenderer>();
+            Debug.Log(itemSpriteRenderer.sprite);
             image.sprite = itemSpriteRenderer.sprite;
         }
     }
@@ -47,8 +48,8 @@ public class InventoryController : MonoBehaviour
     public void OnPointerEnter(){
         
         if (lastDragged.id != 0 && checkIfSlotIsEmpty()) {Debug.Log("add item to inventory");
-            setImage(lastDragged);
             inventorySlot.item = lastDragged.item;
+            setImage(lastDragged);
             lastDragged.id = 0;
         } 
     }
