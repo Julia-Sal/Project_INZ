@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Environment_scripts\NightVision.cs" />
     <Compile Include="Assets\Scripts\Control\InventorySlot.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Scripts\Control\DoorController.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\EnvBehaviour.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
   </ItemGroup>

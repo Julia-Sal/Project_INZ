@@ -29,7 +29,6 @@ public class ObjChangeLayer : MonoBehaviour
         if (other.CompareTag("MainCharacter"))
         {
             sortingGroup.sortingOrder = onTriggerExitLayer;
-            Debug.Log(sortingGroup.sortingOrder);
         }
     }
 }
