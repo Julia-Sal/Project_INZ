@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +8,7 @@ public class InventoryController : MonoBehaviour
     public Sprite defaultSprite;
     public InventorySlot inventorySlot;
     private GameObject objectFromInventory;
+    public Transform parent;
 
     public void OnPointerExit() {
         
@@ -22,15 +21,18 @@ public class InventoryController : MonoBehaviour
     private void takeItemFromInventory() { 
         if (Input.touchCount > 0) {
             Touch touch = Input.GetTouch(0);
-            Debug.Log("take item from inventory");
             if (touch.phase == TouchPhase.Moved) {
                 Vector3 touchPos = new Vector3(touch.position.x, touch.position.y, 0);
                 Ray ray = Camera.main.ScreenPointToRay(touchPos);
 
                 if (Physics.Raycast(ray, out RaycastHit hit)) {
+                    //ustalenie pozycji w której ma siê pojawiæ obiekt
                     Vector3 targetPosition = hit.point;
                     targetPosition.y = 0.5f;
-                    Instantiate(objectFromInventory, targetPosition, objectFromInventory.transform.rotation);
+
+                    //tworzenie obiektu
+                    CreateObject createObject= new CreateObject();
+                    createObject.generateObject(objectFromInventory, parent, targetPosition);
                     image.sprite = defaultSprite;
                 }
             }
@@ -47,7 +49,7 @@ public class InventoryController : MonoBehaviour
 
     public void OnPointerEnter(){
         
-        if (lastDragged.id != 0 && checkIfSlotIsEmpty()) {Debug.Log("add item to inventory");
+        if (lastDragged.id != 0 && checkIfSlotIsEmpty()) {
             inventorySlot.item = lastDragged.item;
             setImage(lastDragged);
             lastDragged.id = 0;
@@ -55,7 +57,6 @@ public class InventoryController : MonoBehaviour
     }
 
     public bool checkIfSlotIsEmpty() {
-        Debug.Log("check if slot is empty");
         return image.sprite.Equals(defaultSprite);
 
     }
