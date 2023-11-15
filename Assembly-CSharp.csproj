@@ -66,9 +66,11 @@
     <Compile Include="Assets\Scripts\Control\TouchController.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\ObjChangeLayer.cs" />
     <Compile Include="Assets\Scripts\Control\InventoryController.cs" />
+    <Compile Include="Assets\Scripts\Control\CreateObject.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\collider.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDoor.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\NightGenerateObjects.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\Control\Pickup.cs" />
@@ -84,9 +86,13 @@
     <Compile Include="Assets\Scripts\Control\DoorController.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\EnvBehaviour.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Environment_scripts\NightGenerateObjects.cs" />
-    <Compile Include="Assets\Scripts\Control\CreateObject.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
+    <Compile Include="Assets\Scripts\Quests\Task.cs" />
+    <Compile Include="Assets\Scripts\Quests\Quest.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\1\StartQuest.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\1\endTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
