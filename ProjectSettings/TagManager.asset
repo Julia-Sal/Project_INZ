@@ -10,6 +10,7 @@ TagManager:
   - Item
   - InventoryButton
   - Manager
+  - Npc
   layers:
   - Default
   - TransparentFX
@@ -41,7 +42,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Npc
   - MainCharacter
   m_SortingLayers:
   - name: Default

@@ -56,13 +56,16 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\InteractionDoor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\InteractionInterface.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildings_behaviour.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
     <Compile Include="Assets\Scripts\Control\InventorySlotsManager.cs" />
     <Compile Include="Assets\Scripts\Control\ItemController.cs" />
+    <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\Scripts\Control\TouchController.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\ObjChangeLayer.cs" />
     <Compile Include="Assets\Scripts\Control\InventoryController.cs" />
@@ -70,8 +73,8 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\collider.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDoor.cs" />
-    <Compile Include="Assets\Scripts\Environment_scripts\NightGenerateObjects.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\1\StartQuest.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\Control\Pickup.cs" />
     <Compile Include="Assets\Scripts\Control\Item.cs" />
@@ -79,20 +82,17 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildingBehaviour_SpriteRenderer.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\1\endTask.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McMovementControler.cs" />
-    <Compile Include="Assets\Scripts\Environment_scripts\NightVision.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\DayNight\NightVision.cs" />
     <Compile Include="Assets\Scripts\Control\InventorySlot.cs" />
+    <Compile Include="Assets\Scripts\Quests\Task.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Control\DoorController.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\EnvBehaviour.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
-    <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
-    <Compile Include="Assets\Scripts\Quests\Task.cs" />
-    <Compile Include="Assets\Scripts\Quests\Quest.cs" />
-    <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
-    <Compile Include="Assets\Scripts\Quests\QusetList\1\StartQuest.cs" />
-    <Compile Include="Assets\Scripts\Quests\QusetList\1\endTask.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\DayNight\DayVision.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

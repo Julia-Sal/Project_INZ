@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: c850ee8c3b14cc8459e7e186857cf567
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 8b49bcc5dae81c34faa8134d2eedd220,
       type: 2}
@@ -12,3 +15,5 @@ EditorBuildSettings:
       guid: 919320110b18d9d4ebb9e48577144eed, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 2af703dc07c799146a4fd7b3cec645af, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: b4dbdd18c2092124d8e8c0f9dc3e3298,
+      type: 2}

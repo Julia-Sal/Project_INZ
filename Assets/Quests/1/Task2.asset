@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Task2
   m_EditorClassIdentifier: 
   taskName: 
-  isComplete: 0
+  isComplete: 1
   description: 
