@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Control\Interaction\InteractionInterface.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildings_behaviour.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
+    <Compile Include="Assets\Scripts\Control\Interaction\OpenDialog.cs" />
     <Compile Include="Assets\Scripts\Control\InventorySlotsManager.cs" />
     <Compile Include="Assets\Scripts\Control\ItemController.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Scripts\Environment_scripts\ObjChangeLayer.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\DayVision.cs" />
     <Compile Include="Assets\Scripts\Control\InventoryController.cs" />
+    <Compile Include="Assets\Scripts\Quests\Dialog\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Control\CreateObject.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\collider.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\Scripts\Control\Item.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Quests\Dialog\DialogueManager.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildingBehaviour_SpriteRenderer.cs" />
     <Compile Include="Assets\Scripts\Quests\QusetList\1\endTask.cs" />
@@ -93,9 +96,7 @@
     <Compile Include="Assets\Scripts\Environment_scripts\EnvBehaviour.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
-    <Compile Include="Assets\Scripts\Quests\Dialog\DialogManager.cs" />
-    <Compile Include="Assets\Scripts\Control\Interaction\OpenDialog.cs" />
-    <Compile Include="Assets\Scripts\Quests\Dialog\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\Quests\Dialog\DialogueLine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

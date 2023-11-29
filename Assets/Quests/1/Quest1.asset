@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Pierwszy quest
   isComplete: 1
-  isActive: 0
+  isActive: 1
   description: Wykonaj pierwszy quest
   tasks:
   - {fileID: 11400000, guid: 06b5582848c7ed146aeacd892e3b14c8, type: 2}
