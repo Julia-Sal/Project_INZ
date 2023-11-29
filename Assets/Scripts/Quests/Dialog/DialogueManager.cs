@@ -3,7 +3,7 @@ using TMPro;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
-
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,6 +14,10 @@ public class DialogueManager : MonoBehaviour
     private List<Dialog> dialogs;
     private int currentDialogIndex = 0;
     private bool optionsExist = false;
+    private Animator animator;
+    private bool isTextAnimating = false;
+    private Coroutine textCoroutine;
+    private string finalText = null;
 
     public void Start()
     {
@@ -39,7 +43,8 @@ public class DialogueManager : MonoBehaviour
         HideButtons();
         
         Dialog currentDialog = dialogs[currentDialogIndex];
-        dialogText.text = currentDialog.text;
+        finalText = currentDialog.text;
+        textCoroutine = StartCoroutine(WriteText(currentDialog.text));
         dialogSpeaker.text = currentDialog.speaker;
 
         CheckIfOptionsExist();
@@ -62,46 +67,57 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayOptions() {
         Dialog currentDialog = dialogs[currentDialogIndex];
-        dialogText.text = null;
         dialogSpeaker.text = "Me";
 
         for (int i = 0; i < optionButtons.Length; i++)
         {
-            if (i < currentDialog.options.Length)
-            {
-                optionButtons[i].gameObject.SetActive(true);
-                optionButtons[i].GetComponentInChildren<Text>().text = "- "+ currentDialog.options[i].text;
-                int optionIndex = i; 
-                optionButtons[i].onClick.RemoveAllListeners();
-                optionsExist = false;
-                optionButtons[i].onClick.AddListener(() => OnOptionSelected(optionIndex));
-            }
-            else
-            {
-                optionButtons[i].gameObject.SetActive(false);
-            }
+            optionButtons[i].gameObject.SetActive(true);
+            optionButtons[i].GetComponentInChildren<TMP_Text>().text = "- "+ currentDialog.options[i].text;
+            int optionIndex = i;
+            Button currentButton = optionButtons[i];
+            optionButtons[i].onClick.RemoveAllListeners();
+            optionsExist = false;
+            optionButtons[i].onClick.AddListener(() => OnOptionSelected(optionIndex, currentButton));
         }
     }
 
     public void NextPart() {
-        if (currentDialogIndex < dialogs.Count) {
-            if (optionsExist) {
-                DisplayOptions();
+        
+        if (isTextAnimating) {
+            StopCoroutine(textCoroutine);
+            isTextAnimating = false;
+            dialogText.text = finalText;
+
+            Debug.Log("AMA");
+        }
+        else { 
+            dialogText.text = null;
+
+            if (currentDialogIndex < dialogs.Count) {     
+                if (optionsExist) {
+                    DisplayOptions();
+                }
+                else {
+                    DisplayCurrentDialog(); 
+                }
             }
             else {
-                DisplayCurrentDialog(); 
+                EndDialog();
             }
-        }
-        else {
-            EndDialog();
         }
     }
 
-    private void OnOptionSelected(int optionIndex)
-    {
+    private void OnOptionSelected(int optionIndex, Button selectedButton)  {
         DialogOption selectedOption = dialogs[currentDialogIndex].options[optionIndex];
         currentDialogIndex = selectedOption.nextDialog;
-        NextPart();
+        SelectedTextAnimation(selectedButton);
+        finalText = dialogs[selectedOption.nextDialog].text;
+        Invoke("NextPart", 0.5f);
+    }
+
+    private void SelectedTextAnimation(Button selectedButton) {
+        animator = selectedButton.GetComponentInChildren<TextMeshProUGUI>().GetComponent<Animator>();
+        animator.Play("enlargeText");
     }
 
     private void EndDialog()
@@ -109,6 +125,23 @@ public class DialogueManager : MonoBehaviour
         currentDialogIndex = 0;
         dialoguePanel.SetActive(false);
     }
+
+
+    public float delayBetweenLetters = 0.05f;
+    public IEnumerator WriteText(string text)
+    {
+        isTextAnimating = true;
+        string fullText = text;
+        text = "";
+
+        for (int i = 0; i < fullText.Length; i++)
+        {
+            dialogText.text += fullText[i];
+            yield return new WaitForSeconds(delayBetweenLetters);
+        }
+        isTextAnimating = false;
+    }
+
 }
 
 

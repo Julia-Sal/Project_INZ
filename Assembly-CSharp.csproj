@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Control\InventorySlotsManager.cs" />
     <Compile Include="Assets\Scripts\Control\ItemController.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
+    <Compile Include="Assets\Scripts\Quests\Dialog\DialogueLine.cs" />
     <Compile Include="Assets\Scripts\Control\TouchController.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\ObjChangeLayer.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\DayVision.cs" />
@@ -96,7 +97,7 @@
     <Compile Include="Assets\Scripts\Environment_scripts\EnvBehaviour.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
-    <Compile Include="Assets\Scripts\Quests\Dialog\DialogueLine.cs" />
+    <Compile Include="Assets\Scripts\UI\TextWritingAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
