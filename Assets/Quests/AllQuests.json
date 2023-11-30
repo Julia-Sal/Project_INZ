@@ -1,0 +1,18 @@
+{
+    "quests": [
+        {
+            "id": 0,
+            "name": "Zadanie 1",
+            "description": "Opis zadania 1",
+            "tasks": [
+                {"id": 1, "name": "Dobrze, dziękuję.", "description": "opis task 1"},
+                {"id": 2, "name": "Nieźle, a u ciebie?", "description": "opis task 2"}
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Zadanie 2",
+            "description": "Opis zadania 2"
+        }
+    ]
+}

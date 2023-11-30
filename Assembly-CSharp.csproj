@@ -91,13 +91,13 @@
     <Compile Include="Assets\Scripts\MC_scripts\McMovementControler.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\NightVision.cs" />
     <Compile Include="Assets\Scripts\Control\InventorySlot.cs" />
-    <Compile Include="Assets\Scripts\Quests\Task.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Control\DoorController.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\EnvBehaviour.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
-    <Compile Include="Assets\Scripts\UI\TextWritingAnimation.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveQuests.cs" />
+    <Compile Include="Assets\Scripts\Quests\GenerateButtons.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -106,7 +106,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Scripts\Control\Interaction\testDialog.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

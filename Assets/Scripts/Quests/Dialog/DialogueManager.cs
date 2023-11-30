@@ -87,8 +87,6 @@ public class DialogueManager : MonoBehaviour
             StopCoroutine(textCoroutine);
             isTextAnimating = false;
             dialogText.text = finalText;
-
-            Debug.Log("AMA");
         }
         else { 
             dialogText.text = null;
