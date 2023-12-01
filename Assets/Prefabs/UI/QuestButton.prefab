@@ -170,6 +170,8 @@ GameObject:
   - component: {fileID: 5608180538163723885}
   - component: {fileID: 803321172637883698}
   - component: {fileID: 4650508778152198642}
+  - component: {fileID: -61071936758334961}
+  - component: {fileID: 3779543226578598986}
   m_Layer: 5
   m_Name: QuestButton
   m_TagString: Untagged
@@ -280,3 +282,41 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &-61071936758334961
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104802726688495723}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dca3f0a5415f9cb409730ccbad28a83c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3779543226578598986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104802726688495723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229a1299d26f5c148953b0be34c3516e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  description: 
+  descriptionPanel: {fileID: 0}
+  descriptionPrefab: {fileID: 3856988459723716177, guid: b2d6359fddf856547b13d289a88823e8,
+    type: 3}

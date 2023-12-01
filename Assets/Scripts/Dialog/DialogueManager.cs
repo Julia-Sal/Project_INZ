@@ -110,7 +110,7 @@ public class DialogueManager : MonoBehaviour
         currentDialogIndex = selectedOption.nextDialog;
         SelectedTextAnimation(selectedButton);
         finalText = dialogs[selectedOption.nextDialog].text;
-        Invoke("NextPart", 0.5f);
+        Invoke("NextPart", 0.4f);
     }
 
     private void SelectedTextAnimation(Button selectedButton) {
