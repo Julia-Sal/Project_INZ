@@ -7,6 +7,8 @@ public class CreateObject : MonoBehaviour
         if (parent != null && prefab != null)
         {
             GameObject newObject = Instantiate(prefab);
+            Debug.Log(prefab);
+            Debug.Log(newObject);
             newObject.name = prefab.name;
             newObject.transform.SetParent(parent);
             newObject.transform.position = targetPosition;

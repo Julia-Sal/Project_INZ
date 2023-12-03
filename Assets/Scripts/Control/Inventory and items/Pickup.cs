@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    public Item item;
     public Item lastDragged;
+    public Item item;
 
     public void pickup() {
         lastDragged.id = item.id;

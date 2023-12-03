@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5911862687454248165}
   - component: {fileID: 5911862687454248164}
   - component: {fileID: 5911862687454248163}
-  - component: {fileID: 1229438273135524139}
   - component: {fileID: 2306116310990107092}
   - component: {fileID: 2306116310990107095}
   m_Layer: 5
@@ -126,19 +125,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1229438273135524139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5911862687454248161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aef1a4e72b9495489da86b69efd6e31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventorySlot: {fileID: 0}
 --- !u!114 &2306116310990107092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,10 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2a9628c83b6364e99a8b5299802333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemInInventory: {fileID: 0}
   image: {fileID: 5911862687895906083}
   lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
   defaultSprite: {fileID: 21300000, guid: 6e268b0d7363a994cb8a0c4d2b8ebe35, type: 3}
-  inventorySlot: {fileID: 0}
+  parent: {fileID: 0}
 --- !u!114 &2306116310990107095
 MonoBehaviour:
   m_ObjectHideFlags: 0

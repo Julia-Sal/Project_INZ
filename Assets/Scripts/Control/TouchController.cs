@@ -30,9 +30,10 @@ public class TouchController : MonoBehaviour
                     if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer))
                     {   //przypadek gdy dotkniêto przedmiot
                         ItemGotGrabbed(touch, hit);
-                                            }
+                        }
                     else if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactiveLayer))
                     {
+                        //przypadek gdy wywo³ano interakcjê
                         InteractionInterface interactiveObject = hit.collider.GetComponent<InteractionInterface>();
                         if (interactiveObject != null)
                         {

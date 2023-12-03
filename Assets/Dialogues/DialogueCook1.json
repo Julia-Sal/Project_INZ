@@ -1,0 +1,80 @@
+{
+  "dialogs": [
+    {
+      "id": 0,
+      "speaker": "Kucharz",
+      "text": "O! W końcu się obudziłeś, słyszałem że nic nie pamiętasz?",
+      "options": [
+        {"id": 1, "text": "...", "nextDialog": 1},
+        {"id": 2, "text": "Ja... Tak, znasz mnie?", "nextDialog": 6}
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "Kucharz",
+      "text": "Chyba mocno Ci się pomieszało, raczej bywałeś za głośny niż za cichy.",
+      "nextDialog": 2
+    },
+	{
+      "id": 2,
+      "speaker": "Kucharz",
+      "text": "No nic, raczej Ci to nie pomoże odzyskać pamięci, ale na pewno poprawi Ci humor.",
+      "nextDialog": 3
+    },
+	{
+      "id": 3,
+      "speaker": "Kucharz",
+      "text": "Twoje ulubione, zjedz i odzyskaj siły.",
+      "options": [
+        {"id": 1, "text": "...Dziękuję", "nextDialog": 4},
+        {"id": 2, "text": "Wiesz może co mi się przytrafiło?", "nextDialog": 9}
+      ]
+    },
+	{
+      "id": 4,
+      "speaker": "Kucharz",
+      "text": "Nie dość że małomówny to jeszcze zaczął wyrażać się kulturalnie, naprawdę ciekawe...",
+      "nextDialog": 5
+    },
+	{
+      "id": 5,
+      "speaker": "Kucharz",
+      "text": "Idź już zanim Ci wystygnie.",
+      "nextDialog": 100
+    },
+	{
+      "id": 6,
+      "speaker": "Kucharz",
+      "text": "Oczywiście, że tak, wszyscy się tu znamy.",
+      "nextDialog": 7
+    },
+	{
+      "id": 7,
+      "speaker": "Kucharz",
+      "text": "Weź, jak się najesz to od razu Ci się humor poprawi.",
+	  "options": [
+        {"id": 1, "text": "...Dziękuję", "nextDialog": 8},
+        {"id": 2, "text": "Wiesz może co mi się przytrafiło?", "nextDialog": 9}
+      ]
+    },
+	{
+      "id": 8,
+      "speaker": "Kucharz",
+      "text": "Nie myślałem że kiedyś usłyszę od Ciebie to słowo...",
+      "nextDialog": 5
+    },
+	{
+      "id": 9,
+      "speaker": "Kucharz",
+      "text": "Wiem tylko że Cię szukali przez miesiąc, a dwa dni temu znaleźli leżącego z owcami.",
+      "nextDialog": 10
+    },
+	{
+      "id": 10,
+      "speaker": "Kucharz",
+      "text": "Mam ważniejsze rzeczy do roboty niż uganianie się za Tobą.",
+      "nextDialog": 5
+    }
+	
+  ]
+}

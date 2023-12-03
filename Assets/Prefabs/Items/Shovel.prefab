@@ -13,9 +13,7 @@ GameObject:
   - component: {fileID: 1254350358067902557}
   - component: {fileID: 1254350358067902556}
   - component: {fileID: 1254350358067902555}
-  - component: {fileID: 1254350358067902554}
   - component: {fileID: 1254350358067902553}
-  - component: {fileID: 6059324912162154782}
   m_Layer: 9
   m_Name: shovel
   m_TagString: Item
@@ -130,19 +128,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1254350358067902554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254350358067902552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c815331fd57f0b4a86ddfcbefc38e8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: af56f1d2752138746b85ce3a5fe2f528, type: 2}
 --- !u!114 &1254350358067902553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,18 +140,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92951d2845016647b58456a17eedf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: af56f1d2752138746b85ce3a5fe2f528, type: 2}
   lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
---- !u!114 &6059324912162154782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254350358067902552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 726fefabfec72404380e4179759cdf81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: Items
+  item: {fileID: 11400000, guid: a42b7bdfc5c16524eaeb11a72d3f9481, type: 2}
