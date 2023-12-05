@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildings_behaviour.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDialog.cs" />
+    <Compile Include="Assets\Scripts\Control\Interaction\OpenDoorBig.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
     <Compile Include="Assets\Scripts\Dialog\DialogueLine.cs" />
     <Compile Include="Assets\Scripts\Save\SaveItemsOnMap.cs" />
@@ -98,6 +99,8 @@
     <Compile Include="Assets\Scripts\Save\SaveQuests.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveMcPosition.cs" />
+    <Compile Include="Assets\Scripts\Save\GameController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

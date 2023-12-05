@@ -44,7 +44,7 @@ public class SaveQuests
         }
         else
         {
-            Debug.Log("Plik JSON nie istnieje na");
+            CheckIfFileExist();
         }
     }
 
