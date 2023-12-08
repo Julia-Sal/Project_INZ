@@ -86,7 +86,6 @@ public class TouchController : MonoBehaviour
                 objectStartPos = selectedObject.transform.position;
                 rb = selectedObject.GetComponent<Rigidbody>();
                 selectedObject.GetComponent<Pickup>().pickup();
-                rb.constraints |= RigidbodyConstraints.FreezePositionY;
                 selectedObject.GetComponent<Collider>().enabled = false;
 
                 isMoving = true;
@@ -113,7 +112,6 @@ public class TouchController : MonoBehaviour
 
     private void itemGotMoved(Touch touch){
         selectedObject.GetComponent<Collider>().enabled = true;
-        rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
             
         selectedObject = null;
         isMoving = false;   
@@ -123,7 +121,4 @@ public class TouchController : MonoBehaviour
         Destroy(selectedObject);
     }
 
-    private bool interact(GameObject interactiveObject) {
-        return true;
-    }
 }

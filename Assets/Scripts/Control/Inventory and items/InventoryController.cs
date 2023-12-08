@@ -3,13 +3,14 @@ using UnityEngine.UI;
 
 [System.Serializable]
 public class InventoryController : MonoBehaviour
-{   
+{
     public GameObject itemInInventory;
     public Image image;
     public Item lastDragged;
     public Sprite defaultSprite;
     private GameObject objectFromInventory;
     public Transform parent;
+    public int slotIndex;
 
     public void OnPointerExit() {
         if (!checkIfSlotIsEmpty()) {
@@ -29,13 +30,16 @@ public class InventoryController : MonoBehaviour
                 if (Physics.Raycast(ray, out RaycastHit hit)) {
                     //ustalenie pozycji w której ma siê pojawiæ obiekt
                     Vector3 targetPosition = hit.point;
-                    targetPosition.y = 0.5f;
+                    targetPosition.y = 0.1f;
 
                     //tworzenie obiektu
                     CreateObject createObject= new CreateObject();
                     createObject.generateObject(objectFromInventory, parent, targetPosition);
                     image.sprite = defaultSprite;
                     itemInInventory = null;
+
+                    SaveInventory saveInventory = new SaveInventory();
+                    saveInventory.DeleteItemFromInventory(slotIndex);
                 }
             }
         }
@@ -51,15 +55,16 @@ public class InventoryController : MonoBehaviour
     public void OnPointerEnter(){
         
         if (lastDragged.id != 0 && checkIfSlotIsEmpty()) {
-            Debug.Log(lastDragged.item);
             itemInInventory = lastDragged.item;
             setImage(lastDragged);
             lastDragged.id = 0;
+            SaveInventory saveInventory = new SaveInventory();
+            saveInventory.SaveItemData(itemInInventory.name, slotIndex); 
         }
 
-        SaveInventory saveInventory = new SaveInventory();
-        saveInventory.SaveItemData(itemInInventory);
+        
     }
+
 
     public bool checkIfSlotIsEmpty() {
         return image.sprite.Equals(defaultSprite);

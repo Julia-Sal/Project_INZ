@@ -1,0 +1,10 @@
+{
+  "dialogs": [
+    {
+      "id": 0,
+      "speaker": "Szef",
+      "text": "Idź coś zjeść.",
+      "nextDialog": 100
+    }
+  ]
+}

@@ -65,7 +65,9 @@
     <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDialog.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDoorBig.cs" />
+    <Compile Include="Assets\Scripts\Save\ResetGame.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveMcPosition.cs" />
     <Compile Include="Assets\Scripts\Dialog\DialogueLine.cs" />
     <Compile Include="Assets\Scripts\Save\SaveItemsOnMap.cs" />
     <Compile Include="Assets\Scripts\Control\TouchController.cs" />
@@ -78,19 +80,21 @@
     <Compile Include="Assets\collider.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDoor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
-    <Compile Include="Assets\Scripts\Quests\QusetList\1\StartQuest.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\0\StartQuest.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\Scripts\Dialog\ChangeDialogue.cs" />
     <Compile Include="Assets\Scripts\Save\SaveInventory.cs" />
     <Compile Include="Assets\Scripts\Control\Inventory and items\Pickup.cs" />
     <Compile Include="Assets\Scripts\Control\Inventory and items\Item.cs" />
     <Compile Include="Assets\Scripts\UI\Description.cs" />
+    <Compile Include="Assets\Scripts\Save\GameController.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Quests\GenerateButtons.cs" />
     <Compile Include="Assets\Scripts\Dialog\DialogueManager.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildingBehaviour_SpriteRenderer.cs" />
-    <Compile Include="Assets\Scripts\Quests\QusetList\1\endTask.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\0\endTask.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McMovementControler.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\NightVision.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
@@ -99,8 +103,7 @@
     <Compile Include="Assets\Scripts\Save\SaveQuests.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
-    <Compile Include="Assets\Scripts\Save\SaveMcPosition.cs" />
-    <Compile Include="Assets\Scripts\Save\GameController.cs" />
+    <Compile Include="Assets\Scripts\Save\Inventory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

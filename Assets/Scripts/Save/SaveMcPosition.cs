@@ -10,7 +10,7 @@ public class SaveMcPosition
 
     private void CheckIfFileExist()
     {
-        savePath = Application.persistentDataPath + "/savePositionData.json";
+        savePath = Application.persistentDataPath + "/SaveData.json";
 
         if (!File.Exists(savePath))
         {
@@ -19,25 +19,26 @@ public class SaveMcPosition
     }
 
     public void SavePosition(GameObject player) {
-        savePath = Application.persistentDataPath + "/savePositionData.json";
+        CheckIfFileExist();
+        savePath = Application.persistentDataPath + "/SaveData.json";
         Vector3 playerPositionVector = GetPlayerPosition(player);
 
-    playerPosition= new PlayerPosition
-        {
-            playerPositionX = playerPositionVector.x,
-            playerPositionY = playerPositionVector.y,
-            playerPositionZ = playerPositionVector.z
-    };
+        playerPosition= new PlayerPosition
+            {
+                playerPositionX = playerPositionVector.x,
+                playerPositionY = playerPositionVector.y,
+                playerPositionZ = playerPositionVector.z
+        };
 
-    string json = JsonUtility.ToJson(playerPosition);
-    File.WriteAllText(savePath, json);
+        string json = JsonUtility.ToJson(playerPosition);
+        File.WriteAllText(savePath, json);
 
-    Debug.Log("Game saved!");
+        Debug.Log("Game saved!");
     }
 
-    public void LoadPosition(GameObject player)
-    {
-        savePath = Application.persistentDataPath + "/savePositionData.json";
+    public void LoadPosition(GameObject player) {
+        CheckIfFileExist();
+        savePath = Application.persistentDataPath + "/SaveData.json";
         // Sprawdü, czy istnieje plik zapisu
         if (File.Exists(savePath))
         {

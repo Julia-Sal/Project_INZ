@@ -5,10 +5,9 @@
             "name": "Rozejrzyj się po wiosce",
             "description": "Ugh, moja głowa, nic nie pamiętam. Gdzie ja jestem? Może jak rozejrzę się po wiosce to coś mi się przypomni.",
             "tasks": [
-                {"id": 0, "name": "Udaj się do szefa", "description": "Powiedziano mi, że jak się obudzę to mam udać się do szefa tego miejsca."},
-                {"id": 1, "name": "Znajdź kucharza", "description": "Jestem głodny, kiedy ostanio coś jadłem?"},
-				{"id": 2, "name": "Znajdź rybaka", "description": "Ta rzeka... Wiem że spędzałem tutaj dużo czasu...."},
-				{"id": 3, "name": "Porozmawiaj z kimś", "description": "Ktoś może powie mi więcej o tym kim jestem."}
+                {"id": 0, "name": "Znajdź kucharza", "description": "Jestem głodny, kiedy ostanio coś jadłem?"},
+				{"id": 1, "name": "Znajdź rybaka", "description": "Ta rzeka... Wiem że spędzałem tutaj dużo czasu...."},
+				{"id": 2, "name": "Porozmawiaj z kimś", "description": "Ktoś może powie mi więcej o tym kim jestem."}
             ]
         },
         {

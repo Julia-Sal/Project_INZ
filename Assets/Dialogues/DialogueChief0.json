@@ -1,0 +1,82 @@
+{
+  "dialogs": [
+    {
+      "id": 0,
+      "speaker": "Szef",
+      "text": "Jak się czujesz?",
+      "options": [
+        {"id": 1, "text": "Kim jesteś?", "nextDialog": 1},
+        {"id": 2, "text": "Gdzie ja jestem?", "nextDialog": 6}
+      ]
+    },
+    {
+      "id": 1,
+      "speaker": "Szef",
+      "text": "Kim jestem?",
+      "nextDialog": 2
+    },
+    {
+      "id": 2,
+      "speaker": "Szef",
+      "text": "Jakbyś nie dał nam już dość zmartwień podczas tego miesiąca...",
+      "nextDialog": 3
+    },
+    {
+      "id": 3,
+      "speaker": "Szef",
+      "text": "Teraz jeszcze mi mówisz, że nic nie pamiętasz?!",
+      "options": [
+        {"id": 1, "text": "...Przepraszam?", "nextDialog": 4},
+        {"id": 2, "text": "Czyli kim jesteś?", "nextDialog": 9}
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Szef",
+      "text": "!?",
+      "nextDialog": 5
+    },
+    {
+      "id": 5,
+      "speaker": "Szef",
+      "text": "Na razie idź coś zjeść, nie wiem czy udajesz, żeby uniknąć konsekwencji, ale rozmowa może poczekać.",
+      "options": [
+        {"id": 1, "text": "Gdzie jest kuchnia?", "nextDialog": 8},
+        {"id": 2, "text": "W porządku.", "nextDialog": 10}
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Szef",
+      "text": "W sypialni a gdzie.",
+      "nextDialog": 7
+    },
+    {
+      "id": 7,
+      "speaker": "Szef",
+      "text": "Ważniejsze jest gdzie byłeś wcześniej! Może raczysz mi o tym opowiedzieć?",
+      "options": [
+        {"id": 1, "text": "Ja.. Nic nie pamiętam.", "nextDialog": 2},
+        {"id": 2, "text": "...", "nextDialog": 5}
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Szef",
+      "text": "...Na zewnątrz.",
+      "nextDialog": 100
+    },
+    {
+      "id": 9,
+      "speaker": "Szef",
+      "text": "Szefem tego miejsca i Twoim.",
+      "nextDialog": 5
+    },
+    {
+      "id": 10,
+      "speaker": "Szef",
+      "text": "Nie zapomnij potem do mnie przyjść!",
+      "nextDialog": 100
+    }
+  ]
+}

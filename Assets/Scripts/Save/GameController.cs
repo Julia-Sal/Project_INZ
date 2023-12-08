@@ -5,14 +5,19 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     private SaveMcPosition saveMcPosition;
-    private float saveInterval = 30f; // Czas w sekundach miêdzy automatycznymi zapisami
+    private float saveInterval = 60f; // Czas w sekundach miêdzy automatycznymi zapisami
     private float timeSinceLastSave = 0f;
     public GameObject player;
+    public Transform itemSlotParent;
 
     private void Start()
     {
         saveMcPosition = new SaveMcPosition();
         saveMcPosition.LoadPosition(player);
+
+        SaveInventory saveInventory = new SaveInventory();
+        saveInventory.LoadItemData(itemSlotParent);
+        
     }
 
     void Update()

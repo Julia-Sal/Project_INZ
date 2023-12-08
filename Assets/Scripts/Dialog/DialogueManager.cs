@@ -111,6 +111,7 @@ public class DialogueManager : MonoBehaviour
         SelectedTextAnimation(selectedButton);
         finalText = dialogs[selectedOption.nextDialog].text;
         Invoke("NextPart", 0.4f);
+        
     }
 
     private void SelectedTextAnimation(Button selectedButton) {
