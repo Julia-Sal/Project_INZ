@@ -33,7 +33,10 @@ public class DialogueManager : MonoBehaviour
 
     private void LoadDialogsFromJSON(string jsonPath)
     {
-        string jsonString = File.ReadAllText(jsonPath);
+        TextAsset jsonFile = Resources.Load<TextAsset>(jsonPath);
+        Debug.Log(jsonFile);
+        string jsonString = jsonFile.text;
+        Debug.Log(jsonString);
         DialogContainer dialogContainer = JsonUtility.FromJson<DialogContainer>(jsonString);
         dialogs = dialogContainer.dialogs;
     }

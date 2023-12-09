@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SaveInventory: MonoBehaviour {
-
+    private string savePath = Application.persistentDataPath + "/SaveInventoryData.json";
     public void SaveItemData(string name, int slotIndex) {
-        string savePath = Application.persistentDataPath + "/saveInventoryData.json";
+        
         string json = File.ReadAllText(savePath);
         SlotsContainer container = JsonUtility.FromJson<SlotsContainer>(json);
 
@@ -26,7 +26,6 @@ public class SaveInventory: MonoBehaviour {
 
 
     public void LoadItemData(Transform itemSlotParent) {
-        string savePath = Application.persistentDataPath + "/saveInventoryData.json";
         string json = File.ReadAllText(savePath);
         SlotsContainer container = JsonUtility.FromJson<SlotsContainer>(json);
 
@@ -79,13 +78,11 @@ public class SaveInventory: MonoBehaviour {
 
         string json = JsonUtility.ToJson(container, true);
 
-        string savePath = Application.persistentDataPath + "/saveInventoryData.json";
         File.WriteAllText(savePath, json);
     }
 
     public void DeleteItemFromInventory(int slotIndex) {
-        string filePath = Application.persistentDataPath + "/saveInventoryData.json";
-        string json = File.ReadAllText(filePath);
+        string json = File.ReadAllText(savePath);
         SlotsContainer container = JsonUtility.FromJson<SlotsContainer>(json);
         ItemSlot slotToUpdate = container.itemSlots.Find(o => o.id == slotIndex);
 
@@ -97,7 +94,7 @@ public class SaveInventory: MonoBehaviour {
             Debug.LogWarning($"Object with ID {slotIndex} not found.");
         }
         string updatedJson = JsonUtility.ToJson(container, true); // true dla formatowania
-        File.WriteAllText(filePath, updatedJson);
+        File.WriteAllText(savePath, updatedJson);
     }
 
 

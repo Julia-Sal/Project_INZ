@@ -8,18 +8,8 @@ public class SaveMcPosition
 {   private string savePath;
     private PlayerPosition playerPosition;
 
-    private void CheckIfFileExist()
-    {
-        savePath = Application.persistentDataPath + "/SaveData.json";
-
-        if (!File.Exists(savePath))
-        {
-            File.Create(savePath).Close(); ;
-        }
-    }
 
     public void SavePosition(GameObject player) {
-        CheckIfFileExist();
         savePath = Application.persistentDataPath + "/SaveData.json";
         Vector3 playerPositionVector = GetPlayerPosition(player);
 
@@ -37,7 +27,6 @@ public class SaveMcPosition
     }
 
     public void LoadPosition(GameObject player) {
-        CheckIfFileExist();
         savePath = Application.persistentDataPath + "/SaveData.json";
         // Sprawdü, czy istnieje plik zapisu
         if (File.Exists(savePath))

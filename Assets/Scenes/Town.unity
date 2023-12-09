@@ -13590,7 +13590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e56d599d189df542994075f6bd89a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueJsonPath: Assets/Dialogues/DialogueChief0.json
+  dialogueJsonPath: Dialogues/DialogueChief0
 --- !u!1 &626109751
 GameObject:
   m_ObjectHideFlags: 0
@@ -30812,7 +30812,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1263882224}
   - component: {fileID: 1263882225}
-  - component: {fileID: 1263882226}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -30849,18 +30848,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 221759352}
   itemSlotParent: {fileID: 434205407}
---- !u!114 &1263882226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263882223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 150649d680c6d11428fc3b44985f440f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1268567735
 GameObject:
   m_ObjectHideFlags: 0
@@ -30908,7 +30895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   chief: {fileID: 624850678}
-  newPath: Assets/Dialogues/DialogueChief1.json
+  newPath: Dialogues/DialogueChief1
 --- !u!65 &1268567738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51309,7 +51296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e56d599d189df542994075f6bd89a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueJsonPath: Assets/Dialogues/DialogueFisherman0..json
+  dialogueJsonPath: Dialogues/DialogueFisherman0
 --- !u!1001 &1980702120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56450,7 +56437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e56d599d189df542994075f6bd89a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueJsonPath: Assets/Dialogues/DialogueCook0.json
+  dialogueJsonPath: Dialogues/DialogueCook0
 --- !u!1 &2107435728
 GameObject:
   m_ObjectHideFlags: 0

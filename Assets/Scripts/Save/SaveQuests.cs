@@ -8,13 +8,18 @@ public class SaveQuests
 {
     private string savePath = Application.persistentDataPath + "/QuestData.json";
 
-    private void CheckIfFileExist()
+    public void CreateQuestData()
     {
         if (!File.Exists(savePath))
         {
-            File.Create(savePath).Close(); ;
+            QuestData questData = new QuestData();
+            Debug.Log("create");
+            string json = JsonUtility.ToJson(questData);
+            File.WriteAllText(savePath, json);
         }
     }
+
+
 
     public void addQuestToActiveQuests(Quest targetQuest) {
         if (File.Exists(savePath))
@@ -44,7 +49,7 @@ public class SaveQuests
         }
         else
         {
-            CheckIfFileExist();
+
         }
     }
 
@@ -85,7 +90,6 @@ public class SaveQuests
 
 
     public List<ActiveQuest> LoadActiveQuests() {
-        CheckIfFileExist();
         string json = File.ReadAllText(savePath);
         QuestData questData = JsonUtility.FromJson<QuestData>(json);
         List<ActiveQuest> activeQuests = questData.activeQuests;
