@@ -4,23 +4,24 @@ using System.IO;
 using UnityEngine;
 
 [System.Serializable]
-public class SaveMcPosition
+public class SaveData
 {   private string savePath;
-    private PlayerPosition playerPosition;
+    private SavedData savedData;
 
 
-    public void SavePosition(GameObject player) {
+    public void SavePosition(GameObject player)
+    {
         savePath = Application.persistentDataPath + "/SaveData.json";
         Vector3 playerPositionVector = GetPlayerPosition(player);
 
-        playerPosition= new PlayerPosition
-            {
-                playerPositionX = playerPositionVector.x,
-                playerPositionY = playerPositionVector.y,
-                playerPositionZ = playerPositionVector.z
+        savedData = new SavedData
+        {
+            playerPositionX = playerPositionVector.x,
+            playerPositionY = playerPositionVector.y,
+            playerPositionZ = playerPositionVector.z
         };
 
-        string json = JsonUtility.ToJson(playerPosition);
+        string json = JsonUtility.ToJson(savedData);
         File.WriteAllText(savePath, json);
 
         Debug.Log("Game saved!");
@@ -32,9 +33,9 @@ public class SaveMcPosition
         if (File.Exists(savePath))
         {
             string json = File.ReadAllText(savePath);
-            playerPosition = JsonUtility.FromJson<PlayerPosition>(json);
+            savedData = JsonUtility.FromJson<SavedData>(json);
 
-            SetPlayerPosition(new Vector3(playerPosition.playerPositionX, playerPosition.playerPositionY, playerPosition.playerPositionZ), player);
+            SetPlayerPosition(new Vector3(savedData.playerPositionX, savedData.playerPositionY, savedData.playerPositionZ), player);
 
             Debug.Log("Game loaded!");
         }
@@ -60,10 +61,10 @@ public class SaveMcPosition
 
 
 [System.Serializable]
-public class PlayerPosition
+public class SavedData
 {
     public float playerPositionX;
     public float playerPositionY;
     public float playerPositionZ;
-    // Dodaj inne potrzebne informacje o stanie gry
+    public bool isDay;
 }

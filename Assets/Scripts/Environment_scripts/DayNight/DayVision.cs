@@ -10,7 +10,7 @@ public class DayVision : MonoBehaviour
     public Light lampLight; // Œwiat³o przy bohaterze
     public float lampLightIntensity;
 
-    void RemoveNightObjects()
+    private void RemoveNightObjects()
     {
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
 
@@ -31,13 +31,9 @@ public class DayVision : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("MainCharacter"))
-        {
-            RemoveNightObjects();
-            mainLight.intensity = 1f;
-            lampLight.intensity = 0f;
-        }
+    public void DayTime() {
+        RemoveNightObjects();
+        mainLight.intensity = 1f;
+        lampLight.intensity = 0f;
     }
 }

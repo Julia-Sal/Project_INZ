@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
-    <Compile Include="Assets\Scripts\Environment_scripts\InteractionDoor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\InteractionInterface.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildings_behaviour.cs" />
@@ -67,7 +66,7 @@
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDoorBig.cs" />
     <Compile Include="Assets\Scripts\Save\ResetGame.cs" />
     <Compile Include="Assets\Scripts\Quests\Quest.cs" />
-    <Compile Include="Assets\Scripts\Save\SaveMcPosition.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveData.cs" />
     <Compile Include="Assets\Scripts\Save\SaveItemsOnMap.cs" />
     <Compile Include="Assets\Scripts\Control\TouchController.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\ObjChangeLayer.cs" />
@@ -96,6 +95,7 @@
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildingBehaviour_SpriteRenderer.cs" />
     <Compile Include="Assets\Scripts\Quests\QusetList\0\endTask.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McMovementControler.cs" />
+    <Compile Include="Assets\Scripts\Control\Interaction\InteractiveObjectSpawnItem.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\NightVision.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Control\DoorController.cs" />
@@ -103,6 +103,8 @@
     <Compile Include="Assets\Scripts\Save\SaveQuests.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\DayNight\DayAndNightController.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\DayNight\ChangeTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

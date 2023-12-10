@@ -9,16 +9,13 @@ public class NightVision : MonoBehaviour
     public float lampLightIntensity;
     
     
-    private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("MainCharacter"))
-        {
-            RemoveDayObjects();
-            mainLight.intensity = 0.2f;
-            lampLight.intensity = lampLightIntensity;
-        }
+    public void NightTime() {
+        RemoveDayObjects();
+        mainLight.intensity = 0.2f;
+        lampLight.intensity = lampLightIntensity;
     }
 
-    void RemoveDayObjects()
+    private void RemoveDayObjects()
     {
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
 

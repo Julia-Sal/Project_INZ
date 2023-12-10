@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private SaveMcPosition saveMcPosition;
+    private SaveData saveData;
     private float saveInterval = 60f; // Czas w sekundach miêdzy automatycznymi zapisami
     private float timeSinceLastSave = 0f;
     public GameObject player;
@@ -15,8 +15,8 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         CheckIfFilesExist();
-        saveMcPosition = new SaveMcPosition();
-        saveMcPosition.LoadPosition(player);
+        saveData = new SaveData();
+        saveData.LoadPosition(player);
 
         SaveInventory saveInventory = new SaveInventory();
         saveInventory.LoadItemData(itemSlotParent);
@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
 
     private void CheckIfFilesExist() {
         string saveInventoryFile = Application.persistentDataPath + "/SaveInventoryData.json";
-        string saveMcPositionFile = Application.persistentDataPath + "/SaveData.json";
+        string saveDataFile = Application.persistentDataPath + "/SaveData.json";
         string saveQuestsFile = Application.persistentDataPath + "/QuestData.json";
 
         if (!File.Exists(saveInventoryFile)) {
@@ -33,9 +33,9 @@ public class GameController : MonoBehaviour
             saveInventory.CreateItemData();
         }
 
-        if (!File.Exists(saveMcPositionFile))
+        if (!File.Exists(saveDataFile))
         {
-            File.Create(saveMcPositionFile).Close();
+            File.Create(saveDataFile).Close();
         }
 
         if (!File.Exists(saveQuestsFile))
@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
 
         if (timeSinceLastSave >= saveInterval)
         {
-            saveMcPosition.SavePosition(player);
+            saveData.SavePosition(player);
             timeSinceLastSave = 0f;
         }
     }
