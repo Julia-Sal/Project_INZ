@@ -7,11 +7,25 @@ using UnityEngine;
 public class SaveData
 {   private string savePath;
     private SavedData savedData;
+    private string saveDataPath = "/SaveData.json";
 
+    public void CreateData() {
+        savePath = Application.persistentDataPath + saveDataPath;
+        savedData = new SavedData
+        {
+            playerPositionX = -21f,
+            playerPositionY = 0.1f,
+            playerPositionZ = 41.9f,
+            isDay = true
+        };
+
+        string json = JsonUtility.ToJson(savedData, true);
+        File.WriteAllText(savePath, json);
+    }
 
     public void SavePosition(GameObject player)
     {
-        savePath = Application.persistentDataPath + "/SaveData.json";
+        savePath = Application.persistentDataPath + saveDataPath;
         Vector3 playerPositionVector = GetPlayerPosition(player);
 
         savedData = new SavedData
@@ -28,7 +42,7 @@ public class SaveData
     }
 
     public void LoadPosition(GameObject player) {
-        savePath = Application.persistentDataPath + "/SaveData.json";
+        savePath = Application.persistentDataPath + saveDataPath;
         // Sprawdü, czy istnieje plik zapisu
         if (File.Exists(savePath))
         {

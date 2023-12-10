@@ -35,7 +35,8 @@ public class GameController : MonoBehaviour
 
         if (!File.Exists(saveDataFile))
         {
-            File.Create(saveDataFile).Close();
+            SaveData saveData = new SaveData();
+            saveData.CreateData();
         }
 
         if (!File.Exists(saveQuestsFile))
