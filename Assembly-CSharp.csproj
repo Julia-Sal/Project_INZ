@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenInformativeDialog.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\AnimationOffset.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
