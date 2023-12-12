@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractiveObjectSpawnItem : MonoBehaviour, InteractionInterface
+public class InteractiveObjectSpawnItem : MonoBehaviour
 {
     public GameObject item;
+    public GameObject spawnedItem;
+    public GameObject itemParent;
+
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("sprawdzam");
         if (other.GetComponent<Pickup>().item.id == item.GetComponent<Pickup>().item.id)
-        { 
-            Debug.Log("poprawnyItem");
+        {
+            GameObject newSpawnedItem = Instantiate(spawnedItem, itemParent.transform);
+            newSpawnedItem.name = spawnedItem.name;
+            newSpawnedItem.transform.position = gameObject.transform.position;
         }
     }
-
-    public void interact() {
-    }
 }
+

@@ -12,6 +12,7 @@ TagManager:
   - Manager
   - Npc
   - InteractiveObjects
+  - Animal
   layers:
   - Default
   - TransparentFX

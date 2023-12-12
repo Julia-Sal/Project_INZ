@@ -27,12 +27,15 @@ public class SaveData
     {
         savePath = Application.persistentDataPath + saveDataPath;
         Vector3 playerPositionVector = GetPlayerPosition(player);
+        string jsonToRead = File.ReadAllText(savePath);
+        savedData = JsonUtility.FromJson<SavedData>(jsonToRead);
 
         savedData = new SavedData
         {
             playerPositionX = playerPositionVector.x,
             playerPositionY = playerPositionVector.y,
-            playerPositionZ = playerPositionVector.z
+            playerPositionZ = playerPositionVector.z,
+            isDay = savedData.isDay
         };
 
         string json = JsonUtility.ToJson(savedData);

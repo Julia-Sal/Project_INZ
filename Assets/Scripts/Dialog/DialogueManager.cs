@@ -12,31 +12,29 @@ public class DialogueManager : MonoBehaviour
     public Button[] optionButtons;
     public GameObject dialoguePanel;
     private List<Dialog> dialogs;
-    private int currentDialogIndex = 0;
+    private int currentDialogIndex = 1;
     private bool optionsExist = false;
     private Animator animator;
     private bool isTextAnimating = false;
     private Coroutine textCoroutine;
     private string finalText = null;
+    public GameObject joystick;
 
     public void Start()
     {
         dialoguePanel.SetActive(false);
     }
 
-    public void StartDialog(string jsonPath)
-    {
+    public void StartDialog(string jsonPath) {
+        joystick.SetActive(false);
         LoadDialogsFromJSON(jsonPath);
         DisplayCurrentDialog();
         dialoguePanel.SetActive(true);
     }
 
-    private void LoadDialogsFromJSON(string jsonPath)
-    {
+    private void LoadDialogsFromJSON(string jsonPath) {
         TextAsset jsonFile = Resources.Load<TextAsset>(jsonPath);
-        Debug.Log(jsonFile);
         string jsonString = jsonFile.text;
-        Debug.Log(jsonString);
         DialogContainer dialogContainer = JsonUtility.FromJson<DialogContainer>(jsonString);
         dialogs = dialogContainer.dialogs;
     }
@@ -44,8 +42,8 @@ public class DialogueManager : MonoBehaviour
     private void DisplayCurrentDialog()
     {
         HideButtons();
-        
-        Dialog currentDialog = dialogs[currentDialogIndex];
+
+        Dialog currentDialog = dialogs.Find(dialog => dialog.id == currentDialogIndex);
         finalText = currentDialog.text;
         textCoroutine = StartCoroutine(WriteText(currentDialog.text));
         dialogSpeaker.text = currentDialog.speaker;
@@ -60,16 +58,16 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void CheckIfOptionsExist() { 
-        if (dialogs[currentDialogIndex].options != null){
+        if (dialogs.Find(dialog => dialog.id == currentDialogIndex).options != null){
             optionsExist = true;
         }
         else {
-           currentDialogIndex = dialogs[currentDialogIndex].nextDialog;
+           currentDialogIndex = dialogs.Find(dialog => dialog.id == currentDialogIndex).nextDialog; 
         }
     }
 
     private void DisplayOptions() {
-        Dialog currentDialog = dialogs[currentDialogIndex];
+        Dialog currentDialog = dialogs.Find(dialog => dialog.id == currentDialogIndex);
         dialogSpeaker.text = "Me";
 
         for (int i = 0; i < optionButtons.Length; i++)
@@ -85,7 +83,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void NextPart() {
-        
         if (isTextAnimating) {
             StopCoroutine(textCoroutine);
             isTextAnimating = false;
@@ -93,8 +90,10 @@ public class DialogueManager : MonoBehaviour
         }
         else { 
             dialogText.text = null;
-
-            if (currentDialogIndex < dialogs.Count) {     
+            if (currentDialogIndex == 0) { 
+                EndDialog();
+            }
+            else if (currentDialogIndex < dialogs.Count+1) {     
                 if (optionsExist) {
                     DisplayOptions();
                 }
@@ -109,10 +108,10 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void OnOptionSelected(int optionIndex, Button selectedButton)  {
-        DialogOption selectedOption = dialogs[currentDialogIndex].options[optionIndex];
+        DialogOption selectedOption = dialogs.Find(dialog => dialog.id == currentDialogIndex).options[optionIndex];
         currentDialogIndex = selectedOption.nextDialog;
         SelectedTextAnimation(selectedButton);
-        finalText = dialogs[selectedOption.nextDialog].text;
+        finalText = dialogs.Find(dialog => dialog.id == currentDialogIndex).text;
         Invoke("NextPart", 0.4f);
         
     }
@@ -124,7 +123,8 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialog()
     {
-        currentDialogIndex = 0;
+        joystick.SetActive(true);
+        currentDialogIndex = 1;
         dialoguePanel.SetActive(false);
     }
 
@@ -144,32 +144,19 @@ public class DialogueManager : MonoBehaviour
         isTextAnimating = false;
     }
 
+    public void StartInformativeDialog(int dialogID, string jsonPath) {
+        joystick.SetActive(false);
+        HideButtons();
+        LoadDialogsFromJSON(jsonPath);
+
+        Dialog currentDialog = dialogs.Find(dialog => dialog.id == dialogID);
+        finalText = currentDialog.text;
+        textCoroutine = StartCoroutine(WriteText(currentDialog.text));
+        dialogSpeaker.text = currentDialog.speaker;
+        
+        CheckIfOptionsExist();
+        dialoguePanel.SetActive(true);
+    }
+
 }
 
-
-
-
-
-[System.Serializable]
-public class DialogContainer
-{
-    public List<Dialog> dialogs;
-}
-
-[System.Serializable]
-public class Dialog
-{
-    public int id;
-    public string speaker;
-    public string text;
-    public DialogOption[] options;
-    public int nextDialog;
-}
-
-[System.Serializable]
-public class DialogOption
-{
-    public int id;
-    public string text;
-    public int nextDialog;
-}
