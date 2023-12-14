@@ -4,7 +4,14 @@ using UnityEngine;
 [System.Serializable]
 public class DialogContainer
 {
-    public List<Dialog> dialogs;
+    public List<CurrentDialog> dialogs;
+}
+
+[System.Serializable]
+public class CurrentDialog
+{
+    public int id;
+    public List<Dialog> dialogList;
 }
 
 [System.Serializable]
@@ -44,6 +51,3 @@ public class InformativeDialogueLines
 {
     public DialogueLine[] lines;
 }
-
-
-

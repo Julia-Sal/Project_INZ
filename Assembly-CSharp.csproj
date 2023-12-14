@@ -81,7 +81,6 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Scripts\Quests\QusetList\0\StartQuest.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
-    <Compile Include="Assets\Scripts\Dialog\ChangeDialogue.cs" />
     <Compile Include="Assets\Scripts\Save\SaveInventory.cs" />
     <Compile Include="Assets\Scripts\Control\Inventory and items\Pickup.cs" />
     <Compile Include="Assets\Scripts\Control\Inventory and items\Item.cs" />
@@ -103,10 +102,13 @@
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\ChangeTime.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\EnvBehaviour.cs" />
     <Compile Include="Assets\Scripts\Save\SaveQuests.cs" />
-    <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenInformativeDialog.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\AnimationOffset.cs" />
+    <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
+    <Compile Include="Assets\Scripts\Control\Interaction\InteractiveObjectSetActive.cs" />
+    <Compile Include="Assets\Scripts\Control\AnimationPlay.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveDialogState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

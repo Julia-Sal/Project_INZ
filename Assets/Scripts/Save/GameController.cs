@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
         string saveInventoryFile = Application.persistentDataPath + "/SaveInventoryData.json";
         string saveDataFile = Application.persistentDataPath + "/SaveData.json";
         string saveQuestsFile = Application.persistentDataPath + "/QuestData.json";
+        string saveDialogueFile = Application.persistentDataPath + "/SaveDialogue.json";
 
         if (!File.Exists(saveInventoryFile)) {
             SaveInventory saveInventory = new SaveInventory();
@@ -43,6 +44,11 @@ public class GameController : MonoBehaviour
         {
             SaveQuests saveQuests = new SaveQuests();
             saveQuests.CreateQuestData();
+        }
+
+        if (!File.Exists(saveDialogueFile)) {
+            SaveDialogState saveDialogState = new SaveDialogState();
+            saveDialogState.CreateData();
         }
     }
 

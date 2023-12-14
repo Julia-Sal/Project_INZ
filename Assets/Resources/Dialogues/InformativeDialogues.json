@@ -1,19 +1,30 @@
 {
   "dialogs": [
-    {
-      "id": 1,
-      "speaker": "Me",
-      "text": "Nie wykopię tego gołymi rękami.",
-	  "canShow": true,
-	  "nextDialog": 0
-    },
-	{
-      "id": 2,
-      "speaker": "Me",
-      "text": "Ktoś mnie może zobaczyć.",
-	  "canShow": true,
-	  "options": [],
-	  "nextDialog": 0
-    }
-  ]
+	   {	
+		"id": 0,
+		"dialogList": [
+			{
+			  "id": 1,
+			  "speaker": "Me",
+			  "text": "Nie wykopię tego gołymi rękami.",
+			  "canShow": true,
+			  "nextDialog": 0
+			},
+			{
+			  "id": 2,
+			  "speaker": "Me",
+			  "text": "Ktoś mnie może zobaczyć.",
+			  "canShow": true,
+			  "nextDialog": 0
+			},
+			{
+			  "id": 3,
+			  "speaker": "Me",
+			  "text": "Nie otworzę tego bez klucza.",
+			  "canShow": true,
+			  "nextDialog": 0
+			}
+		]
+	    }
+   ]
 }

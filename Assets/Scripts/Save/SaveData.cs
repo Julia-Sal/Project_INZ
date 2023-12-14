@@ -8,6 +8,7 @@ public class SaveData
 {   private string savePath;
     private SavedData savedData;
     private string saveDataPath = "/SaveData.json";
+    private string saveDialoguePath = "/SaveDialogue.json";
 
     public void CreateData() {
         savePath = Application.persistentDataPath + saveDataPath;
@@ -73,9 +74,6 @@ public class SaveData
         player.transform.position = position;
     }
 }
-
-
-
 
 [System.Serializable]
 public class SavedData
