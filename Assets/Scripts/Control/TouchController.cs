@@ -16,28 +16,36 @@ public class TouchController : MonoBehaviour
     public Item lastDragged;
     public LayerMask itemLayer;
     public LayerMask interactiveLayer;
+    public LayerMask joystickLayer;
     private RaycastHit hit;
+    public Camera camera;
     private GameObject interactiveObject;
 
     private void Update(){
         if (Input.touchCount > 0){
             Touch touch = Input.GetTouch(0); // Get the first touch (assuming one finger touch)
-            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            Ray ray = camera.ScreenPointToRay(touch.position);
             
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer))
-                    {   //przypadek gdy dotkniêto przedmiot
-                        ItemGotGrabbed(touch, hit);
-                        }
-                    else if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactiveLayer))
-                    {
-                        //przypadek gdy wywo³ano interakcjê
-                        InteractionInterface interactiveObject = hit.collider.GetComponent<InteractionInterface>();
-                        if (interactiveObject != null)
+
+                    Debug.Log(IsPointerOverUIObject(touch.position));
+
+                    if (!IsPointerOverUIObject(touch.position)) {
+                        Debug.Log(IsPointerOverUIObject(touch.position));
+                        if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer))
+                        {   //przypadek gdy dotkniêto przedmiot
+                            ItemGotGrabbed(touch, hit);
+                            }
+                        else if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactiveLayer))
                         {
-                            interactiveObject.interact();
+                            //przypadek gdy wywo³ano interakcjê
+                            InteractionInterface interactiveObject = hit.collider.GetComponent<InteractionInterface>();
+                            if (interactiveObject != null)
+                            {
+                                interactiveObject.interact();
+                            }
                         }
                     }
                     break;
@@ -100,7 +108,7 @@ public class TouchController : MonoBehaviour
         if (isMoving && selectedObject != null)
         {
             Vector3 touchPos = new Vector3(touch.position.x, touch.position.y, 0);
-            Ray ray = Camera.main.ScreenPointToRay(touchPos);
+            Ray ray = camera.ScreenPointToRay(touchPos);
             if (Physics.Raycast(ray, out hit))
             {
                 Vector3 targetPosition = hit.point;
@@ -121,4 +129,20 @@ public class TouchController : MonoBehaviour
         Destroy(selectedObject);
     }
 
+
+    bool IsPointerOverUIObject(Vector2 touchPosition) //Do poprawy
+    {
+        // Tworzenie eventData potrzebnego do raycastingu UI
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = touchPosition;
+
+        // Lista hitów, w której zapisywane bêd¹ trafienia raycastingu
+        var results = new List<RaycastResult>();
+
+        // Przeprowadzenie raycastingu na elemencie UI
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
+        // Sprawdzenie, czy s¹ trafienia
+        return results.Count > 0;
+    }
 }

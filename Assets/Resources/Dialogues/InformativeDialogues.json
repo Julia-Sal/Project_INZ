@@ -23,6 +23,27 @@
 			  "text": "Nie otworzę tego bez klucza.",
 			  "canShow": true,
 			  "nextDialog": 0
+			},
+			{
+			  "id": 4,
+			  "speaker": "Owca",
+			  "text": "Meeeeeh",
+			  "canShow": true,
+			  "nextDialog": 0
+			},
+			{
+			  "id": 5,
+			  "speaker": "Owca",
+			  "text": "Beeeeeh",
+			  "canShow": true,
+			  "nextDialog": 0
+			},
+			{
+			  "id": 6,
+			  "speaker": "Owca",
+			  "text": "Beeeebh?",
+			  "canShow": true,
+			  "nextDialog": 0
 			}
 		]
 	    }
