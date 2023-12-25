@@ -30,10 +30,7 @@ public class TouchController : MonoBehaviour
             {
                 case TouchPhase.Began:
 
-                    Debug.Log(IsPointerOverUIObject(touch.position));
-
                     if (!IsPointerOverUIObject(touch.position)) {
-                        Debug.Log(IsPointerOverUIObject(touch.position));
                         if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer))
                         {   //przypadek gdy dotkniêto przedmiot
                             ItemGotGrabbed(touch, hit);

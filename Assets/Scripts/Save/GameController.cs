@@ -5,22 +5,16 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private SaveData saveData;
     private float saveInterval = 60f; // Czas w sekundach miêdzy automatycznymi zapisami
     private float timeSinceLastSave = 0f;
     public GameObject player;
     public Transform itemSlotParent;
+    public Transform itemParent;
     
 
-    private void Start()
-    {
+    private void Start(){
         CheckIfFilesExist();
-        saveData = new SaveData();
-        saveData.LoadPosition(player);
-
-        SaveInventory saveInventory = new SaveInventory();
-        saveInventory.LoadItemData(itemSlotParent);
-        
+        LoadAll();
     }
 
     private void CheckIfFilesExist() {
@@ -28,6 +22,7 @@ public class GameController : MonoBehaviour
         string saveDataFile = Application.persistentDataPath + "/SaveData.json";
         string saveQuestsFile = Application.persistentDataPath + "/QuestData.json";
         string saveDialogueFile = Application.persistentDataPath + "/SaveDialogue.json";
+        string saveItemsFile = Application.persistentDataPath + "/SaveItemsData.json";
 
         if (!File.Exists(saveInventoryFile)) {
             SaveInventory saveInventory = new SaveInventory();
@@ -50,15 +45,44 @@ public class GameController : MonoBehaviour
             SaveDialogState saveDialogState = new SaveDialogState();
             saveDialogState.CreateData();
         }
+
+        if (!File.Exists(saveItemsFile))
+        {
+            SaveItemsOnMap saveItems = new SaveItemsOnMap();
+            saveItems.CreateData(itemParent);
+        }
     }
 
-    void Update()
-    {
+    void OnApplicationQuit(){
+        CheckIfFilesExist();
+        SaveAll();
+    }
+
+    public void SaveAll() { 
+        SaveData saveData = new SaveData();
+        saveData.SavePosition(player);
+
+        SaveItemsOnMap saveItems = new SaveItemsOnMap();
+        saveItems.SaveData(itemParent);
+    }
+    private void LoadAll() { 
+        SaveData saveData = new SaveData();
+        saveData.LoadPosition(player);
+
+        SaveInventory saveInventory = new SaveInventory();
+        saveInventory.LoadItemData(itemSlotParent);
+
+        SaveItemsOnMap saveItems = new SaveItemsOnMap();
+        saveItems.LoadData(itemParent);
+    }
+
+    void Update(){
         timeSinceLastSave += Time.deltaTime;
 
         if (timeSinceLastSave >= saveInterval)
         {
-            saveData.SavePosition(player);
+            CheckIfFilesExist();
+            SaveAll();
             timeSinceLastSave = 0f;
         }
     }
