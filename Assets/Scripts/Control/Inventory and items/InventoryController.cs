@@ -34,7 +34,7 @@ public class InventoryController : MonoBehaviour
 
                     //tworzenie obiektu
                     CreateObject createObject= new CreateObject();
-                    createObject.generateObject(objectFromInventory, parent, targetPosition);
+                    createObject.generateObject(targetPosition, objectFromInventory.name);
                     image.sprite = defaultSprite;
                     itemInInventory = null;
 
@@ -64,7 +64,6 @@ public class InventoryController : MonoBehaviour
 
         
     }
-
 
     public bool checkIfSlotIsEmpty() {
         return image.sprite.Equals(defaultSprite);

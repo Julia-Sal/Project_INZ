@@ -23,7 +23,7 @@ public class TouchController : MonoBehaviour
 
     private void Update(){
         if (Input.touchCount > 0){
-            Touch touch = Input.GetTouch(0); // Get the first touch (assuming one finger touch)
+            Touch touch = Input.GetTouch(0);
             Ray ray = camera.ScreenPointToRay(touch.position);
             
             switch (touch.phase)
@@ -31,16 +31,12 @@ public class TouchController : MonoBehaviour
                 case TouchPhase.Began:
 
                     if (!IsPointerOverUIObject(touch.position)) {
-                        if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer))
-                        {   //przypadek gdy dotkniêto przedmiot
+                        if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer)) {   
                             ItemGotGrabbed(touch, hit);
                             }
-                        else if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactiveLayer))
-                        {
-                            //przypadek gdy wywo³ano interakcjê
+                        else if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactiveLayer)) {
                             InteractionInterface interactiveObject = hit.collider.GetComponent<InteractionInterface>();
-                            if (interactiveObject != null)
-                            {
+                            if (interactiveObject != null) {
                                 interactiveObject.interact();
                             }
                         }
@@ -49,31 +45,23 @@ public class TouchController : MonoBehaviour
 
                 case TouchPhase.Moved:
                     if (lastDragged.id != 0 && hit.collider != null) {
-                        //Poruszaj obiektem
                         moveObject(touch, hit);
                         break;
-
-
                     }
                     else if (selectedObject != null) {
-                        //Przedmiot zosta³ dodany do ekwipunku
-                            itemGotAddedToInventory();
-                            selectedObject.GetComponent<Pickup>().resetPickup();
+                        itemGotAddedToInventory();
+                        selectedObject.GetComponent<Pickup>().resetPickup();
                         break;
                     }
-                    else if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer))
-                    {
+                    else if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer)) {
                         //Sprawdzaj czy podczas ruszania palcem nie "z³apano" itemu jeœli ju¿ nie poruszamy obiektem
                         ItemGotGrabbed(touch, hit);
                         break;
-                    }
+                    }                 
+                    break;
                     
-                        break;
-                    
-
                 case TouchPhase.Ended:
-                    if (isMoving && selectedObject != null)
-                    {
+                    if (isMoving && selectedObject != null) {
                         selectedObject.GetComponent<Pickup>().resetPickup();
                         itemGotMoved(touch);
                     }
@@ -123,7 +111,8 @@ public class TouchController : MonoBehaviour
     }
 
     private void itemGotAddedToInventory(){
-        Destroy(selectedObject);
+        //Destroy(selectedObject);
+        selectedObject.SetActive(false);
     }
 
 

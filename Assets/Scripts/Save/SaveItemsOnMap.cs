@@ -20,14 +20,15 @@ public class SaveItemsOnMap
             float posX = child.position.x;
             float posY = child.position.y;
             float posZ = child.position.z;
-
+            bool isActive = child.gameObject.activeSelf;
             // Dodaj dane do s³ownika
             itemDictionary[itemName] = new ItemData
             {
                 name = itemName,
                 positionX = posX,
                 positionY = posY,
-                positionZ = posZ
+                positionZ = posZ,
+                isActive = isActive
             };
         }
 
@@ -56,6 +57,7 @@ public class SaveItemsOnMap
                 if (child != null)
                 {
                     child.position = new Vector3(itemData.positionX, itemData.positionY, itemData.positionZ);
+                    child.gameObject.SetActive(itemData.isActive);
                 }
                 else
                 {
@@ -85,6 +87,7 @@ public class SaveItemsOnMap
                 if (child != null)
                 {
                     child.position = new Vector3(itemData.positionX, itemData.positionY, itemData.positionZ);
+                    child.gameObject.SetActive(itemData.isActive);
                 }
                 else
                 {
@@ -110,14 +113,16 @@ public class SaveItemsOnMap
             float posX = child.position.x;
             float posY = child.position.y;
             float posZ = child.position.z;
+            bool isActive = child.gameObject.activeSelf;
 
             itemList.Add(new ItemData
             {
                 name = itemName,
                 positionX = posX,
                 positionY = posY,
-                positionZ = posZ
-            });
+                positionZ = posZ,
+                isActive = isActive
+            });;
         }
 
         ItemDataList itemDataList = new ItemDataList
@@ -137,6 +142,7 @@ public class ItemData
     public float positionX;
     public float positionY;
     public float positionZ;
+    public bool isActive;
 }
 
 [System.Serializable]

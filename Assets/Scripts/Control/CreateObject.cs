@@ -2,17 +2,18 @@ using UnityEngine;
 
 public class CreateObject : MonoBehaviour
 {
-    public void generateObject(GameObject prefab, Transform parent, Vector3 targetPosition)
+    public void generateObject(Vector3 targetPosition, string childName)
     {
-        if (parent != null && prefab != null)
-        {
-            GameObject newObject = Instantiate(prefab);
-            Debug.Log(prefab);
-            Debug.Log(newObject);
-            newObject.name = prefab.name;
-            newObject.transform.SetParent(parent);
-            newObject.transform.position = targetPosition;
+        GameObject parentTEST = GameObject.Find("Items");
+        Transform[] childTransforms = parentTEST.GetComponentsInChildren<Transform>(true);
+
+        foreach (Transform child in childTransforms) {
+            if (child.name == childName) {
+                child.gameObject.SetActive(true);
+                child.position = targetPosition;
+            }
         }
+
     }
 
     public void generateObject(GameObject prefab)
