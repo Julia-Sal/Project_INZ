@@ -3,17 +3,22 @@
         {
             "id": 0,
             "name": "Rozejrzyj się po wiosce",
-            "description": "Ugh, moja głowa, nic nie pamiętam. Gdzie ja jestem? Może jak rozejrzę się po wiosce to coś mi się przypomni.",
-            "tasks": [
-                {"id": 0, "name": "Znajdź kucharza", "description": "Jestem głodny, kiedy ostanio coś jadłem?"},
-				{"id": 1, "name": "Znajdź rybaka", "description": "Ta rzeka... Wiem że spędzałem tutaj dużo czasu...."},
-				{"id": 2, "name": "Porozmawiaj z kimś", "description": "Ktoś może powie mi więcej o tym kim jestem."}
-            ]
+            "description": "Ugh, moja głowa, nic nie pamiętam. Gdzie ja jestem? Ktoś podający się za szefa tego miejsca powiedział, że jestem stąd. Nie wygląda jakby kłamał tylko dlaczego kompletnie go nie poznaję? Na początek pójdę coś zjeść, może przy okazji dowiem się czegoś nowego."       
         },
         {
             "id": 1,
-            "name": "Znajdź wskazówki",
-            "description": "Kucharz powiedział, że znaleziono mnie prze szopie, może tam dowiem się czegoś więcej."
-        }
+            "name": "Udaj się do stodoły",
+            "description": "Kucharz powiedział, że odnaleziono mnie gdzieś przy stodole, może tam znajdę jakieś wskazówki."
+        },
+        {
+            "id": 2,
+            "name": "Rozejrzyj się po wiosce",
+			"description":  "Nie mam pojęcia gdzie jestem, może jak rozejrzę się wokół to coś mi się przypomni."
+		},
+        {
+            "id": 3,
+            "name": "Zjedz zupę",
+			"description": "Umieram z głodu, gdzieś tu powinna być zupa." 
+		}
     ]
 }

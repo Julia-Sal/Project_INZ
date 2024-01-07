@@ -1,12 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance;
-    public List<Quest> activeQuests = new List<Quest>();
-    public List<Quest> completedQuests = new List<Quest>();
+    private List<Quest> activeQuests = new List<Quest>();
+    private List<Quest> completedQuests = new List<Quest>();
+    private List<Quest> quests;
+    public GameObject questAlert;
 
     void Awake()
     {
@@ -61,6 +64,29 @@ public class QuestManager : MonoBehaviour
         }*/
     }
 
+    public void ShowQuestAlert()
+    {
+        questAlert.SetActive(true);
+    }
 
+    public void NewQuest(int targetQuestId)
+    {
+        TextAsset jsonFile = Resources.Load<TextAsset>("Quests/AllQuests");
+        string json = jsonFile.text;
+        if (json!=null)
+        {
+            QuestContainer questsContainer = JsonUtility.FromJson<QuestContainer>(json);
+            quests = questsContainer.quests;
+
+            Quest targetQuest = quests.FirstOrDefault(quest => quest.id == targetQuestId);
+
+            if (targetQuest != null)
+            {
+                SaveQuests saveQuests = new SaveQuests();
+                saveQuests.AddQuestToActiveQuests(targetQuest);
+            }
+
+        }
+    }
 
 }

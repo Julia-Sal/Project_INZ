@@ -8,15 +8,14 @@ public class SaveData
 {   private string savePath;
     private SavedData savedData;
     private string saveDataPath = "/SaveData.json";
-    private string saveDialoguePath = "/SaveDialogue.json";
 
     public void CreateData() {
         savePath = Application.persistentDataPath + saveDataPath;
         savedData = new SavedData
         {
             playerPositionX = -21f,
-            playerPositionY = 0.1f,
-            playerPositionZ = 41.9f,
+            playerPositionY = 0.4f,
+            playerPositionZ = 42.5f,
             isDay = true
         };
 

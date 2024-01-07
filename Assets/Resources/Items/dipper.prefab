@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7596927283981814985}
   - component: {fileID: 6311400273799207084}
   - component: {fileID: 7287931555133668513}
-  - component: {fileID: 10985939227996343}
   - component: {fileID: 4005350214584500651}
+  - component: {fileID: 3313939702835594669}
   m_Layer: 9
   m_Name: dipper
   m_TagString: Item
@@ -112,7 +112,21 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
---- !u!54 &10985939227996343
+--- !u!114 &4005350214584500651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596927283981814991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92951d2845016647b58456a17eedf22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
+  item: {fileID: 11400000, guid: b3d82f11b2a5e9e47bb220bd83b65347, type: 2}
+--- !u!54 &3313939702835594669
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,17 +142,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &4005350214584500651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7596927283981814991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c92951d2845016647b58456a17eedf22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
-  item: {fileID: 11400000, guid: b3d82f11b2a5e9e47bb220bd83b65347, type: 2}

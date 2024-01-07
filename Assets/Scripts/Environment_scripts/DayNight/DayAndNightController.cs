@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class DayAndNightController : MonoBehaviour
 {
-    private SavedData savedData;
     private string controller = "DayAndNightController";
     private string saveDataPath = "/SaveData.json";
 

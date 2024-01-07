@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7803372746763150603}
   - component: {fileID: 7196580706658765712}
   - component: {fileID: 8903470417470872782}
-  - component: {fileID: 1543457235206090971}
   - component: {fileID: 477783030113545108}
+  - component: {fileID: -7539052585868448137}
   m_Layer: 9
   m_Name: knife
   m_TagString: Item
@@ -112,7 +112,21 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
---- !u!54 &1543457235206090971
+--- !u!114 &477783030113545108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7803372746763150597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92951d2845016647b58456a17eedf22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
+  item: {fileID: 11400000, guid: b68254ad9b096e34891f3c38a5b2591e, type: 2}
+--- !u!54 &-7539052585868448137
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,17 +142,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &477783030113545108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7803372746763150597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c92951d2845016647b58456a17eedf22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
-  item: {fileID: 11400000, guid: b68254ad9b096e34891f3c38a5b2591e, type: 2}

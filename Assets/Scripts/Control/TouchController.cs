@@ -52,12 +52,7 @@ public class TouchController : MonoBehaviour
                         itemGotAddedToInventory();
                         selectedObject.GetComponent<Pickup>().resetPickup();
                         break;
-                    }
-                    else if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer)) {
-                        //Sprawdzaj czy podczas ruszania palcem nie "z³apano" itemu jeœli ju¿ nie poruszamy obiektem
-                        ItemGotGrabbed(touch, hit);
-                        break;
-                    }                 
+                    }              
                     break;
                     
                 case TouchPhase.Ended:
@@ -77,9 +72,10 @@ public class TouchController : MonoBehaviour
         if (selectedObject.CompareTag("Item")) {
                 touchStartPos = new Vector3(touch.position.x, 0, touch.position.y);
                 objectStartPos = selectedObject.transform.position;
-                rb = selectedObject.GetComponent<Rigidbody>();
+                //rb = selectedObject.GetComponent<Rigidbody>();
                 selectedObject.GetComponent<Pickup>().pickup();
                 selectedObject.GetComponent<Collider>().enabled = false;
+                
 
                 isMoving = true;
         }
@@ -111,7 +107,6 @@ public class TouchController : MonoBehaviour
     }
 
     private void itemGotAddedToInventory(){
-        //Destroy(selectedObject);
         selectedObject.SetActive(false);
     }
 

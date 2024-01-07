@@ -9,9 +9,7 @@ public class InteractiveObjectSpawnItem : MonoBehaviour
 
 
     public void OnTriggerEnter(Collider other) {
-        Debug.Log(other.GetComponent<Pickup>().item.id);
-        Debug.Log(item.GetComponent<Pickup>().item.id);
-        if (other.GetComponent<Pickup>().item.id == item.GetComponent<Pickup>().item.id && gameObject.layer == 10) {
+        if (other.GetComponent<Pickup>() != null && other.GetComponent<Pickup>().item.id == item.GetComponent<Pickup>().item.id && gameObject.layer == 10) {
             Vector3 targetPosition = gameObject.transform.position;
             CreateObject createObject = new CreateObject();
             createObject.generateObject(targetPosition, name);

@@ -56,13 +56,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Control\Interaction\InteractWithNPC.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\InteractionInterface.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\FrontBuildings_behaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\DayAndNightController.cs" />
-    <Compile Include="Assets\Scripts\Quests\QuestGiver.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDialog.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDoorBig.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\InteractiveObjectSetActive.cs" />
@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\DayVision.cs" />
     <Compile Include="Assets\Scripts\Control\Inventory and items\InventoryController.cs" />
     <Compile Include="Assets\Scripts\Dialog\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\Control\Close.cs" />
     <Compile Include="Assets\Scripts\Control\CreateObject.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\collider.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Assets\Scripts\Control\Interaction\InteractiveObjectSpawnItem.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\NightVision.cs" />
     <Compile Include="Assets\Scripts\Save\SaveDialogState.cs" />
+    <Compile Include="Assets\Scripts\Control\Music\MusicManager.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Control\DoorController.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\DayNight\ChangeTime.cs" />

@@ -79,6 +79,18 @@
           "nextDialog": 6
         }
       ]
+    },
+  {
+	"id": 1,
+	"dialogList": [
+    {
+      "id": 1,
+      "speaker": "Szef",
+      "text": "Nie przeszkadzaj mi.",
+      "nextDialog": 0
     }
+	]
+  }
+
   ]
 }

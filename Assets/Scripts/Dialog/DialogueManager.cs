@@ -163,6 +163,7 @@ public class DialogueManager : MonoBehaviour
        }
 
        public void StartInformativeDialog(int dialogID, string jsonPath) {
+           ClearText();
            joystick.SetActive(false);
            HideButtons();
            LoadDialogsFromJSON(jsonPath, 0);

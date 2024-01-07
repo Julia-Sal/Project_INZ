@@ -1,5 +1,5 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "RF8RB0BH74R",
     "m_SelectedPackage": {
         "deviceId": "",
         "name": "",
@@ -7,7 +7,38 @@
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "RF8RB0BH74R",
+            "name": "com.DefaultCompany.GamePA",
+            "processId": 13160,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8RB0BH74R",
+            "name": "com.DefaultCompany.GamePA",
+            "processId": 21187,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8RB0BH74R",
+            "name": "com.DefaultCompany.GamePA",
+            "processId": 29068,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8RB0BH74R",
+            "name": "com.DefaultCompany.GamePA",
+            "processId": 30698,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8RB0BH74R",
+            "name": "com.unity3d.mobileremote",
+            "processId": 20099,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
@@ -41,9 +72,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 2,
         "Behavior": 0
     },

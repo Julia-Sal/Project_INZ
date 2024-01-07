@@ -71,7 +71,7 @@ public class InventoryController : MonoBehaviour
 
     public Transform details;
     public void ShowDetails() {
-        if (itemInInventory.GetComponent<Pickup>().item.isInteractable) {
+        if (itemInInventory != null && itemInInventory.GetComponent<Pickup>().item.isInteractable) {
             details.gameObject.SetActive(true);
             details.GetComponent<Image>().sprite = itemInInventory.GetComponent<SpriteRenderer>().sprite;
         }

@@ -5,14 +5,6 @@ public class Quest {
     public int id;
     public string name;
     public string description;
-    public QuestTask[] tasks;
-}
-
-[System.Serializable]
-public class QuestTask {
-    public int id;
-    public string name;
-    public string description;
 }
 
 [System.Serializable]

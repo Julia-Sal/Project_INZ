@@ -5,7 +5,7 @@ public class ResetGame : MonoBehaviour
 {
     private GameObject player;
 
-    public void StartNewGame() {
+    public void StartNewGame() {Debug.Log("Znajdü");
         player = GameObject.Find("MainCharacter");
         ResetPlayerPosition();
         ResetQuests();
@@ -17,7 +17,7 @@ public class ResetGame : MonoBehaviour
 
     public void ResetQuests() {
         string savePath = Application.persistentDataPath + "/QuestData.json";
-
+        
         if (File.Exists(savePath))
         {
             File.Delete(savePath);

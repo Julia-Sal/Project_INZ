@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9108770802747174112}
   - component: {fileID: 2383773810475982733}
   - component: {fileID: 220810427315537941}
-  - component: {fileID: 7865045289339345819}
   - component: {fileID: 1563232779527900589}
+  - component: {fileID: -4299623188204705455}
   m_Layer: 9
   m_Name: spoon
   m_TagString: Item
@@ -112,7 +112,21 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
---- !u!54 &7865045289339345819
+--- !u!114 &1563232779527900589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9108770802747174046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92951d2845016647b58456a17eedf22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
+  item: {fileID: 11400000, guid: 11739606b1832dc44bf639db37da3a32, type: 2}
+--- !u!54 &-4299623188204705455
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,17 +142,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &1563232779527900589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9108770802747174046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c92951d2845016647b58456a17eedf22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
-  item: {fileID: 11400000, guid: 11739606b1832dc44bf639db37da3a32, type: 2}

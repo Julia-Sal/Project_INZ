@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2029783083145336758}
   - component: {fileID: 6260117261232272759}
   - component: {fileID: 4760970114360744827}
-  - component: {fileID: 8194153462679538084}
   - component: {fileID: 4226473632910132620}
+  - component: {fileID: 4920306017631792939}
   m_Layer: 9
   m_Name: pot_small
   m_TagString: Item
@@ -112,7 +112,21 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
---- !u!54 &8194153462679538084
+--- !u!114 &4226473632910132620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029783083145336756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92951d2845016647b58456a17eedf22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
+  item: {fileID: 11400000, guid: 857d9f93ad7cae344a8eda3760d0364a, type: 2}
+--- !u!54 &4920306017631792939
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,17 +142,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &4226473632910132620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029783083145336756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c92951d2845016647b58456a17eedf22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastDragged: {fileID: 11400000, guid: 63b7d24a908f4874f89122783ac06450, type: 2}
-  item: {fileID: 11400000, guid: 857d9f93ad7cae344a8eda3760d0364a, type: 2}
