@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   item: {fileID: 7803372746763150597, guid: 20fbcf0de8f9606428246f774023c921, type: 3}
+  name: "N\xF3\u017C"
+  isInteractable: 0
+  description: "Ostry n\xF3\u017C"

@@ -16,12 +16,4 @@ public class CreateObject : MonoBehaviour
 
     }
 
-    public void generateObject(GameObject prefab)
-    {
-        if (prefab != null)
-        {
-            GameObject newObject = Instantiate(prefab);
-            newObject.name = prefab.name;
-        }
-    }
 }

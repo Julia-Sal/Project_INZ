@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   item: {fileID: 0}
+  name: LAST DRAGGED ITEM
+  isInteractable: 0
+  description: Przesuwany item

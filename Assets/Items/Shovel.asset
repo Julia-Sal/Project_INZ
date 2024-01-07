@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   item: {fileID: 1254350358067902552, guid: dcafec6ce69bc7c449860eb44b5a3c3c, type: 3}
+  name: "\u0142opata"
+  isInteractable: 0
+  description: "Mog\u0119 co\u015B tym wykopa\u0107"

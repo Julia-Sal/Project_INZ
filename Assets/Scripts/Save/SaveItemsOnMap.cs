@@ -71,26 +71,21 @@ public class SaveItemsOnMap
         }
     }
 
-    public void UpdateData(Transform parent)
-    {
+    public void UpdateData(Transform parent) {
         savePath = Application.persistentDataPath + saveItemsPath;
 
-        if (File.Exists(savePath))
-        {
+        if (File.Exists(savePath)) {
             string jsonString = File.ReadAllText(savePath);
             ItemDataList itemDataList = JsonUtility.FromJson<ItemDataList>(jsonString);
 
-            foreach (ItemData itemData in itemDataList.data)
-            {
+            foreach (ItemData itemData in itemDataList.data) {
                 Transform child = parent.Find(itemData.name);
 
-                if (child != null)
-                {
+                if (child != null) {
                     child.position = new Vector3(itemData.positionX, itemData.positionY, itemData.positionZ);
                     child.gameObject.SetActive(itemData.isActive);
                 }
-                else
-                {
+                else {
                     Debug.LogWarning($"Nie znaleziono obiektu o nazwie {itemData.name} w hierarchii transformacji.");
                 }
             }

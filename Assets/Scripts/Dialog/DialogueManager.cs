@@ -28,13 +28,21 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialog(string jsonPath, string npcName) {
+        ClearText();
         joystick.SetActive(false);
         LoadDialogsFromJSON(jsonPath, CheckCurrentDialogNumber(npcName));
         DisplayCurrentDialog();
         dialoguePanel.SetActive(true);
     }
 
-    //Do dopisania
+    private void ClearText() {
+        if (textCoroutine != null) { 
+            StopCoroutine(textCoroutine);
+        }
+        currentDialogIndex = 1;
+        dialogText.text = null;
+    }
+
     public int CheckCurrentDialogNumber(string npcName) {
         SaveDialogState saveDialogState = new SaveDialogState();
         return saveDialogState.LoadData(npcName); 
@@ -131,7 +139,7 @@ public class DialogueManager : MonoBehaviour
            animator.Play("enlargeText");
        }
 
-       private void EndDialog()
+       public void EndDialog()
        {
            joystick.SetActive(true);
            currentDialogIndex = 1;

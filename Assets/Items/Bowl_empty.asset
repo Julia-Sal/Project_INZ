@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   item: {fileID: 4475242469914089625, guid: e33125f5b99d13e439475f3ef304ca88, type: 3}
+  name: Pusta miska
+  isInteractable: 0
+  description: Pusta miska

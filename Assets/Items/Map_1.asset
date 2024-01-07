@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ae708dd23f0a214ab934061a895b2fa, type: 3}
-  m_Name: Fork
+  m_Name: Map_1
   m_EditorClassIdentifier: 
-  id: 5
-  item: {fileID: 6788669025032250881, guid: ff67b14f3f74dce42a5cfc5d19d45c19, type: 3}
-  name: Widelec
-  isInteractable: 0
-  description: "Wygl\u0105da jak zwyk\u0142y widelec"
+  id: 11
+  item: {fileID: 1304703885599986700, guid: dda2489f0b5be834786fb457ff82da7d, type: 3}
+  name: Mapa 1
+  isInteractable: 1
+  description: Mapa z dziwnym napisem. Co on oznacza i gdzie ona prowadzi?

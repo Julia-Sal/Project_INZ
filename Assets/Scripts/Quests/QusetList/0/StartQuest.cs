@@ -13,6 +13,5 @@ public class StartQuest : MonoBehaviour
 
         SaveDialogState saveDialogState = new SaveDialogState();
         saveDialogState.SaveData(npcName, newDialogueNumber);
-        
     }
 }

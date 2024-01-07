@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 10
   item: {fileID: 9108770802747174046, guid: edf346564ceb56243b341d26ebbc299f, type: 3}
+  name: "\u0141y\u017Cka"
+  isInteractable: 0
+  description: "Zwyk\u0142a \u0142y\u017Cka"
