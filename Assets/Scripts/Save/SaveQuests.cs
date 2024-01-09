@@ -6,9 +6,12 @@ using System.Linq;
 [System.Serializable]
 public class SaveQuests
 {
-    private string savePath = Application.persistentDataPath + "/QuestData.json";
+    private string savePath;
+    private string path = "/QuestData.json";
 
     public void CreateQuestData() {
+        savePath = Application.persistentDataPath + path;
+
         if (!File.Exists(savePath)) {
             QuestData questData = new QuestData();
             string json = JsonUtility.ToJson(questData);
@@ -16,9 +19,8 @@ public class SaveQuests
         }
     }
 
-
-
     public void AddQuestToActiveQuests(Quest targetQuest) {
+        savePath = Application.persistentDataPath + path;
 
         if (File.Exists(savePath)) {
             string json = File.ReadAllText(savePath);
@@ -39,9 +41,7 @@ public class SaveQuests
 
                 //poka¿ alert
                 GameObject questManager = GameObject.Find("QuestManager");
-                questManager.GetComponent<QuestManager>().ShowQuestAlert();
-
-
+                questManager.GetComponent<QuestManager>().ShowQuestAlert("Nowe Zadanie!");
 
             }
             else {
@@ -54,12 +54,13 @@ public class SaveQuests
         }
     }
 
-    public void addQuestToCompletedQuests(Quest targetQuest) {
+    public void AddQuestToCompletedQuests(Quest targetQuest) {
+        savePath = Application.persistentDataPath + path;
+
         if (File.Exists(savePath)) {
             string json = File.ReadAllText(savePath);
             QuestData questData = JsonUtility.FromJson<QuestData>(json);
 
-            Debug.Log(!questData.completedQuests.Any(quest => quest.id == targetQuest.id));
             if (!questData.completedQuests.Any(quest => quest.id == targetQuest.id)) {
                 questData.completedQuests.Add(new CompletedQuest
                 {
@@ -72,6 +73,10 @@ public class SaveQuests
                 File.WriteAllText(savePath, updatedJson);
 
                 Debug.Log($"Dodano do completedQuests");
+
+                //poka¿ alert
+                GameObject questManager = GameObject.Find("QuestManager");
+                questManager.GetComponent<QuestManager>().ShowQuestAlert("Ukoñczono Zadanie!");
             }
             else
             {
@@ -84,11 +89,18 @@ public class SaveQuests
         }
     }
 
-    public void LoadCompletedQuests() {
+    public List<CompletedQuest> LoadCompletedQuests() {
+        savePath = Application.persistentDataPath + path;
+
+        string json = File.ReadAllText(savePath);
+        QuestData questData = JsonUtility.FromJson<QuestData>(json);
+        List<CompletedQuest> completedQuests = questData.completedQuests;
+        return completedQuests;
     }
 
-
     public List<ActiveQuest> LoadActiveQuests() {
+        savePath = Application.persistentDataPath + path;
+
         string json = File.ReadAllText(savePath);
         QuestData questData = JsonUtility.FromJson<QuestData>(json);
         List<ActiveQuest> activeQuests = questData.activeQuests;

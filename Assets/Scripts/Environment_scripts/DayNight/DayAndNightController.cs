@@ -1,41 +1,35 @@
 using System.IO;
 using UnityEngine;
+using TMPro;
 
 public class DayAndNightController : MonoBehaviour
 {
-    private string controller = "DayAndNightController";
     private string saveDataPath = "/SaveData.json";
 
-    void Start()
-    {
-        bool isDay = IsItDayTime();
+    void Start() {
+        SetTime();
+    }
 
-        if (isDay)
-        {
-            GameObject dayAndNightControllerObject = GameObject.Find(controller);
-            DayVision dayVision = dayAndNightControllerObject.GetComponent<DayVision>();
+    public void SetTime() {
+        if (IsItDayTime()){
+            DayVision dayVision = gameObject.GetComponent<DayVision>();
             dayVision.DayTime();
         }
-        else
-        {
-            GameObject dayAndNightControllerObject = GameObject.Find(controller);
-            NightVision nightVision = dayAndNightControllerObject.GetComponent<NightVision>();
+        else {
+            NightVision nightVision = gameObject.GetComponent<NightVision>();
             nightVision.NightTime();
         }
     }
 
-    public bool IsItDayTime()
-    {
+    public bool IsItDayTime() {
         string savePath = Application.persistentDataPath + saveDataPath;
 
-        if (File.Exists(savePath))
-        {
+        if (File.Exists(savePath)) {
             string json = File.ReadAllText(savePath);
             SavedData savedData = JsonUtility.FromJson<SavedData>(json);
             return savedData.isDay;
         }
-        else
-        {
+        else {
             return true;
         }
     }
@@ -43,8 +37,7 @@ public class DayAndNightController : MonoBehaviour
     public void ChangeTime() {
         string savePath = Application.persistentDataPath + saveDataPath;
 
-        if (File.Exists(savePath))
-        {
+        if (File.Exists(savePath)) {
             string json = File.ReadAllText(savePath);
             SavedData savedData = JsonUtility.FromJson<SavedData>(json);
 

@@ -32,13 +32,18 @@ public class SaveInventory: MonoBehaviour {
         for (int i = 0; i < container.itemSlots.Count && i < 5; i++)
         {
             ItemSlot obj = container.itemSlots[i];
-            if(obj.name != null && obj.name != "") {
+            if (obj.name != null && obj.name != "") {
                 Button itemSlotButton = itemSlotParent.GetChild(i).GetComponent<Button>();
                 InventoryController inventoryController = itemSlotButton.GetComponent<InventoryController>();
-                inventoryController.itemInInventory = LoadItemPrefabByName(obj.name); 
+                inventoryController.itemInInventory = LoadItemPrefabByName(obj.name);
                 SpriteRenderer itemSpriteRenderer = inventoryController.itemInInventory.GetComponent<SpriteRenderer>();
                 Image imageComponent = itemSlotButton.transform.GetChild(1).GetComponent<Image>();
                 imageComponent.sprite = itemSpriteRenderer.sprite;
+            }
+            else {
+                Button itemSlotButton = itemSlotParent.GetChild(i).GetComponent<Button>();
+                Image imageComponent = itemSlotButton.transform.GetChild(1).GetComponent<Image>();
+                imageComponent.sprite = itemSlotButton.GetComponent<InventoryController>().defaultSprite;
             }
         }
 

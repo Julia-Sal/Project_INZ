@@ -10,64 +10,87 @@ public class GameController : MonoBehaviour
     public GameObject player;
     public Transform itemSlotParent;
     public Transform itemParent;
-    
+    public GameObject musicController;
+    public GameObject menuPanel;
+    public DayVision dayAndNightController;
 
-    private void Start(){
-        CheckIfFilesExist();
-        LoadAll();
-    }
+    private string saveInventoryFile;
+    private string saveDataFile;
+    private string saveQuestsFile;
+    private string saveDialogueFile;
+    private string saveItemsFile;
 
-    private void CheckIfFilesExist() {
-        string saveInventoryFile = Application.persistentDataPath + "/SaveInventoryData.json";
-        string saveDataFile = Application.persistentDataPath + "/SaveData.json";
-        string saveQuestsFile = Application.persistentDataPath + "/QuestData.json";
-        string saveDialogueFile = Application.persistentDataPath + "/SaveDialogue.json";
-        string saveItemsFile = Application.persistentDataPath + "/SaveItemsData.json";
 
-        if (!File.Exists(saveInventoryFile)) {
-            SaveInventory saveInventory = new SaveInventory();
-            saveInventory.CreateItemData();
+
+    void Start(){
+        menuPanel.SetActive(true);
+
+        if (!CheckIfFilesExist()) {
+            CreateAllFiles();
+            LoadAll();
+
+            dayAndNightController.DayTime();
         }
-
-        if (!File.Exists(saveDataFile))
-        {
-            SaveData saveData = new SaveData();
-            saveData.CreateData();
-        }
-
-        if (!File.Exists(saveQuestsFile))
-        {
-            SaveQuests saveQuests = new SaveQuests();
-            saveQuests.CreateQuestData();
-        }
-
-        if (!File.Exists(saveDialogueFile)) {
-            SaveDialogState saveDialogState = new SaveDialogState();
-            saveDialogState.CreateData();
-        }
-
-        if (!File.Exists(saveItemsFile))
-        {
-            SaveItemsOnMap saveItems = new SaveItemsOnMap();
-            saveItems.CreateData(itemParent);
+        else {
+            LoadAll();
         }
     }
+
+    public bool CheckIfFilesExist() {
+        saveInventoryFile = Application.persistentDataPath + "/SaveInventoryData.json";
+        saveDataFile = Application.persistentDataPath + "/SaveData.json";
+        saveQuestsFile = Application.persistentDataPath + "/QuestData.json";
+        saveDialogueFile = Application.persistentDataPath + "/SaveDialogue.json";
+        saveItemsFile = Application.persistentDataPath + "/SaveItemsData.json";
+
+        if (!File.Exists(saveDataFile) && !File.Exists(saveInventoryFile) && !File.Exists(saveQuestsFile) && !File.Exists(saveDialogueFile) && !File.Exists(saveItemsFile)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    public void CreateAllFiles() { 
+
+        SaveData saveData = new SaveData();
+        saveData.CreateData();
+
+        SaveInventory saveInventory = new SaveInventory();
+        saveInventory.CreateItemData();
+
+        SaveQuests saveQuests = new SaveQuests();
+        saveQuests.CreateQuestData();
+
+        SaveDialogState saveDialogState = new SaveDialogState();
+        saveDialogState.CreateData();
+
+        SaveItemsOnMap saveItems = new SaveItemsOnMap();
+        saveItems.CreateData(itemParent);
+    }
+
 
     void OnApplicationQuit(){
-        CheckIfFilesExist();
-        SaveAll();
+        if (!CheckIfFilesExist()) {
+            CreateAllFiles();
+        }
+        else { 
+            SaveAll();
+        }
+        
     }
 
     public void SaveAll() { 
         SaveData saveData = new SaveData();
-        saveData.SavePosition(player);
+        saveData.SaveAllData(player);
 
         SaveItemsOnMap saveItems = new SaveItemsOnMap();
         saveItems.SaveData(itemParent);
     }
-    private void LoadAll() { 
+
+    public void LoadAll() { 
         SaveData saveData = new SaveData();
-        saveData.LoadPosition(player);
+        saveData.LoadData(player);
 
         SaveInventory saveInventory = new SaveInventory();
         saveInventory.LoadItemData(itemSlotParent);
@@ -79,20 +102,18 @@ public class GameController : MonoBehaviour
     void Update(){
         timeSinceLastSave += Time.deltaTime;
 
-        if (timeSinceLastSave >= saveInterval)
-        {
-            CheckIfFilesExist();
+        if (timeSinceLastSave >= saveInterval) {
             SaveAll();
             timeSinceLastSave = 0f;
         }
     }
 
     public void PauseGame() {
-        Time.timeScale = 0f;
+        musicController.GetComponent<AudioSource>().Pause();
     }
 
     public void ResumeGame() {
-        Time.timeScale = 1f;
+        musicController.GetComponent<AudioSource>().UnPause();
     }
 
 }

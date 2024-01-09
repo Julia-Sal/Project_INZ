@@ -3,12 +3,10 @@ using UnityEngine;
 public class OpenDialog : MonoBehaviour, InteractionInterface
 {
     public string dialogueJsonPath;
-    private DialogueManager dialogueManager;
+    public DialogueManager dialogueManager;
     public string npcName;
     
-    public void interact()
-    {
-        dialogueManager = FindObjectOfType<DialogueManager>();
+    public void interact() {
         dialogueManager.StartDialog(dialogueJsonPath, npcName);
     }
 }

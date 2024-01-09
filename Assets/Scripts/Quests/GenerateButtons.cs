@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +13,7 @@ public class GenerateButtons : MonoBehaviour
     public void Generate() {
         SaveQuests saveQuests = new SaveQuests();
         List<ActiveQuest> activeQuests = saveQuests.LoadActiveQuests();
+        List<CompletedQuest> completedQuests = saveQuests.LoadCompletedQuests();
 
         for (int i = 0; i < activeQuests.Count; i++)
         {
@@ -32,14 +33,39 @@ public class GenerateButtons : MonoBehaviour
             currentButton.onClick.AddListener(() => ShowDescription(currentQuest));
         }
 
+        for (int i = 0; i < completedQuests.Count; i++)
+        {
+            GameObject buttonInstance = Instantiate(buttonPrefab, panel);
+
+            TextMeshProUGUI buttonText = buttonInstance.GetComponentInChildren<TextMeshProUGUI>();
+            buttonText.text = "[ • ]  " + completedQuests[i].name;
+
+            CompletedQuest currentQuest = completedQuests[i];
+
+            Button currentButton = buttonInstance.GetComponent<Button>();
+
+            currentButton.onClick.RemoveAllListeners();
+            currentButton.onClick.AddListener(() => ResetDescription());
+            currentButton.onClick.AddListener(() => ResetButtons());
+            currentButton.onClick.AddListener(() => AnimateButton(currentButton));
+            currentButton.onClick.AddListener(() => ShowDescription(currentQuest));
+        }
+
     }
+
 
     public void ShowDescription(ActiveQuest quest)
     {
         GameObject descriptionInstance = Instantiate(descriptionPrefab, descriptionPanel);
         TMP_Text textComponent = descriptionInstance.GetComponent<TMP_Text>();
         textComponent.text = quest.description;
-        //descriptionPrefab.SetActive(true);
+    }
+
+    public void ShowDescription(CompletedQuest quest)
+    {
+        GameObject descriptionInstance = Instantiate(descriptionPrefab, descriptionPanel);
+        TMP_Text textComponent = descriptionInstance.GetComponent<TMP_Text>();
+        textComponent.text = "[ZAKOŃCZONE]\n" + quest.description;
     }
 
     public void ResetDescription() {

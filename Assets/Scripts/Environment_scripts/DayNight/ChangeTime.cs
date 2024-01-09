@@ -3,23 +3,20 @@ using UnityEngine;
 
 public class ChangeTime : MonoBehaviour, InteractionInterface
 {
-    private string controller = "DayAndNightController";
-    public void interact() {
-        DayAndNightController dayAndNightController = new DayAndNightController();
-        bool isDay = dayAndNightController.IsItDayTime();
+    public GameObject controller;
 
+    public void interact() {
+        bool isDay = controller.GetComponent<DayAndNightController>().IsItDayTime();
 
         if (!isDay) {
-            GameObject dayAndNightControllerObject = GameObject.Find(controller);
-            DayVision dayVision = dayAndNightControllerObject.GetComponent<DayVision>();
+            DayVision dayVision = controller.GetComponent<DayVision>();
             dayVision.DayTime();
-            dayAndNightController.ChangeTime();
+            controller.GetComponent<DayAndNightController>().ChangeTime();
         }
         else {
-            GameObject dayAndNightControllerObject = GameObject.Find(controller);
-            NightVision nightVision = dayAndNightControllerObject.GetComponent<NightVision>();
+            NightVision nightVision = controller.GetComponent<NightVision>();
             nightVision.NightTime();
-            dayAndNightController.ChangeTime();
+            controller.GetComponent<DayAndNightController>().ChangeTime();
         }
     }
 }

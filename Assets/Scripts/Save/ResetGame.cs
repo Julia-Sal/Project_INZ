@@ -1,35 +1,23 @@
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class ResetGame : MonoBehaviour
 {
-    private GameObject player;
+    public GameObject player;
+    public GameController gameController;
 
-    public void StartNewGame() {Debug.Log("Znajdü");
-        player = GameObject.Find("MainCharacter");
-        ResetPlayerPosition();
-        ResetQuests();
+    public void StartNewGame() {
+        DeleteFiles();
+        SceneManager.LoadScene("Town");
     }
 
-    public void ResetPlayerPosition() {
-        player.transform.position = new Vector3(-21.2f, 0.1f, 42.1f);
-    }
 
-    public void ResetQuests() {
-        string savePath = Application.persistentDataPath + "/QuestData.json";
-        
-        if (File.Exists(savePath))
-        {
-            File.Delete(savePath);
-            Debug.Log("Plik JSON zosta≥ wyczyszczony.");
+    public void DeleteFiles() {
+        string[] files = Directory.GetFiles(Application.persistentDataPath);
+        foreach (string file in files) {
+            File.Delete(file);
         }
-
-        QuestData emptyData = new QuestData();
-        string jsonData = JsonUtility.ToJson(emptyData);
-        File.WriteAllText(savePath, jsonData);
     }
 
-    public void ResetDialogues() { 
-    
-    }
 }

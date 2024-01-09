@@ -8,15 +8,15 @@ public class SaveDialogState
     private string saveDialoguePath = "/SaveDialogue.json";
 
 
-    public void CreateData()
-    {
+    public void CreateData() {
         savePath = Application.persistentDataPath + saveDialoguePath;
         List<DialogData> dialogList = new List<DialogData>();
 
         dialogList.Add(new DialogData { npcName = "chief", dialogNumber = 0 });
         dialogList.Add(new DialogData { npcName = "cook", dialogNumber = 0 });
 
-        DialogDataList dialogDataList = new DialogDataList {
+        DialogDataList dialogDataList = new DialogDataList
+        {
             data = dialogList
         };
 
@@ -24,7 +24,10 @@ public class SaveDialogState
         File.WriteAllText(savePath, jsonString);
     }
 
-    public int LoadData(string npcName) { 
+
+    public int LoadData(string npcName) {
+        makeSureFileExists();
+
         savePath = Application.persistentDataPath + saveDialoguePath;
         string jsonString = File.ReadAllText(savePath);
 
@@ -34,7 +37,9 @@ public class SaveDialogState
         return foundDialog.dialogNumber;
     }
 
-    public void SaveData(string npcName, int newDialogNumber) { 
+    public void SaveData(string npcName, int newDialogNumber) {
+        makeSureFileExists();
+
         savePath = Application.persistentDataPath + saveDialoguePath;
         string jsonString = File.ReadAllText(savePath);
 
@@ -46,6 +51,12 @@ public class SaveDialogState
 
         File.WriteAllText(savePath, newJsonString);
 
+    }
+
+    private void makeSureFileExists() { 
+        if (!File.Exists(Application.persistentDataPath + saveDialoguePath)) {
+            CreateData();
+        }
     }
 
 

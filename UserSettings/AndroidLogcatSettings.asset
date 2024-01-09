@@ -10,32 +10,38 @@
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "RF8RB0BH74R",
+            "name": "com.teslacoilsw.launcher",
+            "processId": 27336,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8RB0BH74R",
             "name": "com.DefaultCompany.GamePA",
-            "processId": 13160,
+            "processId": 21186,
             "exited": true
         },
         {
             "deviceId": "RF8RB0BH74R",
             "name": "com.DefaultCompany.GamePA",
-            "processId": 21187,
+            "processId": 22913,
             "exited": true
         },
         {
             "deviceId": "RF8RB0BH74R",
             "name": "com.DefaultCompany.GamePA",
-            "processId": 29068,
+            "processId": 27215,
             "exited": true
         },
         {
             "deviceId": "RF8RB0BH74R",
             "name": "com.DefaultCompany.GamePA",
-            "processId": 30698,
+            "processId": 3429,
             "exited": true
         },
         {
             "deviceId": "RF8RB0BH74R",
-            "name": "com.unity3d.mobileremote",
-            "processId": 20099,
+            "name": "com.google.android.apps.nbu.files",
+            "processId": 22001,
             "exited": false
         }
     ],
