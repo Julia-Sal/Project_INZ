@@ -20,7 +20,7 @@ public class StartQuest : MonoBehaviour
     public void StartQuestNormal() {
         QuestManager manager = questManager.GetComponent<QuestManager>();
         manager.NewQuest(id);
-        questManager.GetComponent<QuestManager>().SetQuests();
+        manager.SetQuests();
     }
 
 }

@@ -8,5 +8,9 @@ public class OpenDialog : MonoBehaviour, InteractionInterface
     
     public void interact() {
         dialogueManager.StartDialog(dialogueJsonPath, npcName);
+
+        if (gameObject.GetComponent<StartQuest>() != null) {
+            gameObject.GetComponent<StartQuest>().StartQuestAfterDialogue();
+        }
     }
 }

@@ -144,6 +144,7 @@ public class DialogueManager : MonoBehaviour
            joystick.SetActive(true);
            currentDialogIndex = 1;
            dialoguePanel.SetActive(false);
+
        }
 
 

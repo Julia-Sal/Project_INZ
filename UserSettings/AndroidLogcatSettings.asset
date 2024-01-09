@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "RF8RB0BH74R",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "RF8RB0BH74R",
+        "name": "com.DefaultCompany.GamePA",
+        "processId": 10682,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,12 @@
             "deviceId": "RF8RB0BH74R",
             "name": "com.google.android.apps.nbu.files",
             "processId": 22001,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8RB0BH74R",
+            "name": "com.DefaultCompany.GamePA",
+            "processId": 10682,
             "exited": false
         }
     ],

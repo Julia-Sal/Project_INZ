@@ -26,10 +26,11 @@ public class GameController : MonoBehaviour
         menuPanel.SetActive(true);
 
         if (!CheckIfFilesExist()) {
+            menuPanel.transform.Find("Instruction").gameObject.SetActive(true);
             CreateAllFiles();
             LoadAll();
 
-            dayAndNightController.DayTime();
+            //dayAndNightController.DayTime();
         }
         else {
             LoadAll();

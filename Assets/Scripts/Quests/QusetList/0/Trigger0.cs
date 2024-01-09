@@ -6,11 +6,8 @@ public class Trigger0 : MonoBehaviour
 {
     public Transform questsParent;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("MainCharacter")) {
-            StartQuest3();
-        }
+    private void OnMouseDown() {
+        StartQuest3();
     }
 
     private void StartQuest3()

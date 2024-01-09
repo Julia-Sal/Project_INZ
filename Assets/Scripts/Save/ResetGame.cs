@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class ResetGame : MonoBehaviour
 {
-    public GameObject player;
-    public GameController gameController;
 
     public void StartNewGame() {
         DeleteFiles();

@@ -1320,8 +1320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dbe7d49cd8bf248bff947891bcbb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 221759352}
-  gameController: {fileID: 1263882225}
 --- !u!1 &66833729
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,8 +3414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dbe7d49cd8bf248bff947891bcbb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 221759352}
-  gameController: {fileID: 1263882225}
 --- !u!1 &124785561
 GameObject:
   m_ObjectHideFlags: 0
@@ -12823,8 +12819,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.1251553
-  m_Height: 0.4348811
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0.012161374, y: -0.06693874, z: -6.3078544e-17}
 --- !u!210 &411019774
@@ -18549,10 +18545,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.16098686
-  m_Height: 0.3219737
+  m_Radius: 0.3
+  m_Height: 0.5
   m_Direction: 1
-  m_Center: {x: -0.015320778, y: -0.06893927, z: -9.150772e-17}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!210 &624850682
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -21468,8 +21464,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15460107
-  m_Height: 0.45718998
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: -0.00329113, y: -0.06170395, z: 1.1312337e-17}
 --- !u!114 &686165953
@@ -21849,7 +21845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710451522}
   - component: {fileID: 710451524}
-  - component: {fileID: 710451523}
+  - component: {fileID: 710451525}
   m_Layer: 0
   m_Name: StartQuestTrigger3
   m_TagString: Untagged
@@ -21865,26 +21861,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710451521}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.080002, y: 0, z: 36.76}
+  m_LocalPosition: {x: -21.10098, y: 0, z: 36.812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1900473689}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &710451523
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710451521}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3057804, y: 1, z: 0.26285553}
-  m_Center: {x: -0.025605202, y: 0, z: 0.013767242}
 --- !u!114 &710451524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21899,6 +21882,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   questManager: {fileID: 1968327577}
+--- !u!136 &710451525
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710451521}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &714373100
 GameObject:
   m_ObjectHideFlags: 0
@@ -23331,30 +23328,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 923474162}
-        m_TargetAssemblyTypeName: GenerateButtons, Assembly-CSharp
-        m_MethodName: Generate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 578109251}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &780897576
 MonoBehaviour:
@@ -27548,6 +27521,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 780897573}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &923474160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31700,8 +31685,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15460107
-  m_Height: 0.43291032
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: -0.00329113, y: -0.07384379, z: -1.6120519e-16}
 --- !u!114 &1049746627
@@ -31997,7 +31982,7 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: aa6791ad478ff884fb3605d29a12d6e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.3
+      value: -13.09
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: aa6791ad478ff884fb3605d29a12d6e2,
         type: 3}
@@ -32007,7 +31992,7 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: aa6791ad478ff884fb3605d29a12d6e2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 42.95
+      value: 41.57
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: aa6791ad478ff884fb3605d29a12d6e2,
         type: 3}
@@ -39172,10 +39157,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1268567736}
-  - component: {fileID: 1268567738}
-  - component: {fileID: 1268567737}
-  - component: {fileID: 1268567739}
   - component: {fileID: 1268567740}
+  - component: {fileID: 1268567744}
+  - component: {fileID: 1268567745}
   m_Layer: 0
   m_Name: StartQuestTrigger0
   m_TagString: Untagged
@@ -39191,54 +39175,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268567735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.06, y: 0, z: 40.5}
+  m_LocalPosition: {x: -13.09, y: 0.1, z: 41.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1900473689}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1268567737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268567735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 631af64d9a07b40499cc29165ab3d2d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 0
-  questManager: {fileID: 1968327577}
---- !u!65 &1268567738
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268567735}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.8268108, y: 0.99273014, z: 0.40517807}
-  m_Center: {x: 0, y: 0, z: 0.69976616}
---- !u!114 &1268567739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268567735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a27e3faba5ce8354799f117c3eb4ad5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newDialogueNumber: 1
-  npcName: chief
 --- !u!114 &1268567740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39252,6 +39195,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questsParent: {fileID: 1900473689}
+--- !u!114 &1268567744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268567735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 631af64d9a07b40499cc29165ab3d2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  questManager: {fileID: 1968327577}
+--- !u!65 &1268567745
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268567735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 1, z: 0.6}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1269944131
 GameObject:
   m_ObjectHideFlags: 0
@@ -45268,8 +45238,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15460107
-  m_Height: 0.40714276
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: -0.00329113, y: -0.086727574, z: -3.4429475e-16}
 --- !u!114 &1413128292
@@ -47693,6 +47663,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473734401}
   m_CullTransparentMesh: 1
+--- !u!1 &1475093872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1475093873}
+  - component: {fileID: 1475093875}
+  - component: {fileID: 1475093874}
+  m_Layer: 0
+  m_Name: DialogTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1475093873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475093872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.433, y: 0, z: 40.941}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2077344080}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1475093874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475093872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27e3faba5ce8354799f117c3eb4ad5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newDialogueNumber: 1
+  npcName: chief
+--- !u!65 &1475093875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475093872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6059093, y: 1, z: 0.53990936}
+  m_Center: {x: 1.8299618, y: 0, z: -2.9060059}
 --- !u!1 &1479262775
 GameObject:
   m_ObjectHideFlags: 0
@@ -59005,8 +59035,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15460107
-  m_Height: 0.39947468
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: -0.00329113, y: -0.09056161, z: -3.9877972e-16}
 --- !u!114 &1794026048
@@ -62368,8 +62398,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15460107
-  m_Height: 0.48246798
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: -0.00329113, y: -0.04906495, z: 1.9092334e-16}
 --- !u!114 &1905538923
@@ -63234,8 +63264,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.1251553
-  m_Height: 0.4348811
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0.012161374, y: -0.06693874, z: -6.3078544e-17}
 --- !u!210 &1939010438
@@ -65330,8 +65360,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.13994929
-  m_Height: 0.29472727
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0.0037727356, y: -0.10358703, z: 3.0429616e-16}
 --- !u!114 &1972293524
@@ -70865,7 +70895,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1475093873}
   m_Father: {fileID: 1900473689}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70881,10 +70912,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350c2db11ca71d143956819abd163a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowl: {fileID: 0}
-  player: {fileID: 0}
-  questManager: {fileID: 0}
-  trigger: {fileID: 0}
+  chief: {fileID: 624850678}
+  questManager: {fileID: 1968327577}
+  questsParent: {fileID: 1900473689}
 --- !u!1 &2079192437
 GameObject:
   m_ObjectHideFlags: 0
@@ -72038,8 +72068,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15460107
-  m_Height: 0.45986223
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: -0.00329113, y: -0.060367823, z: 3.029985e-17}
 --- !u!114 &2094594854
@@ -72749,10 +72779,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15648456
-  m_Height: 0.31296912
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
-  m_Center: {x: -0.0050697327, y: 0.017398298, z: 2.520013e-17}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2106856978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: f9a3eb8355661764ab02fb87e05503d5,

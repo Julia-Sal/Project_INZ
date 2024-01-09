@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class QuestLogic0 : MonoBehaviour
 {
-    public GameObject bowl;
-    public GameObject player;
+    public GameObject chief;
     public GameObject questManager;
-    public GameObject trigger;
-    
+    public Transform questsParent;
 
     void Start()
     {
+        chief.AddComponent<StartQuest>();
+        StartQuest startQuest = chief.GetComponent<StartQuest>();
+        startQuest.questManager = questManager;
+        startQuest.id = 0;
+    }
 
+    private void StartQuest3()
+    {
+        questsParent.Find("StartQuestTrigger3").gameObject.SetActive(true);
     }
 
 
