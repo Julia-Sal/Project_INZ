@@ -5,6 +5,7 @@ public class QuestLogic0 : MonoBehaviour
     public GameObject chief;
     public GameObject questManager;
     public Transform questsParent;
+    public string questTrigger3;
 
     void Start()
     {
@@ -12,11 +13,11 @@ public class QuestLogic0 : MonoBehaviour
         StartQuest startQuest = chief.GetComponent<StartQuest>();
         startQuest.questManager = questManager;
         startQuest.id = 0;
-    }
 
-    private void StartQuest3()
-    {
-        questsParent.Find("StartQuestTrigger3").gameObject.SetActive(true);
+        chief.AddComponent<StartQuestTrigger>();
+        StartQuestTrigger startQuestTrigger = chief.GetComponent<StartQuestTrigger>();
+        startQuestTrigger.questsParent = questsParent;
+        startQuestTrigger.questTrigger = questTrigger3;
     }
 
 

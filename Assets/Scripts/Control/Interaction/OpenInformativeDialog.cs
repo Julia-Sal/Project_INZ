@@ -10,6 +10,10 @@ public class OpenInformativeDialog : MonoBehaviour, InteractionInterface
 
     public void interact()
     {
+        OpenDialogue();
+    }
+
+    public void OpenDialogue() {
         dialogueManager = FindObjectOfType<DialogueManager>();
         dialogueManager.StartInformativeDialog(dialogueID, dialogueJsonPath);
     }

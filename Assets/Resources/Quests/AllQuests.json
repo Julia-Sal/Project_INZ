@@ -2,12 +2,12 @@
     "quests": [
         {
             "id": 0,
-            "name": "Rozejrzyj się po wiosce",
+            "name": "Udaj się do kucharza",
             "description": "Ugh, moja głowa, nic nie pamiętam. Gdzie ja jestem? Ktoś podający się za szefa tego miejsca powiedział, że jestem stąd. Nie wygląda jakby kłamał tylko dlaczego kompletnie go nie poznaję? Na początek pójdę coś zjeść, może przy okazji dowiem się czegoś nowego."       
         },
         {
             "id": 1,
-            "name": "Udaj się do stodoły",
+            "name": "Znajdź stodołę",
             "description": "Kucharz powiedział, że odnaleziono mnie gdzieś przy stodole, może tam znajdę jakieś wskazówki."
         },
         {
@@ -19,6 +19,21 @@
             "id": 3,
             "name": "Zjedz zupę",
 			"description": "Umieram z głodu, gdzieś tu powinna być zupa." 
-		}
+		},
+        {
+            "id": 4,
+            "name": "Przejdź się za ogrodzenie",
+            "description": "Znalazłem stodołę, ale jest ogrodzona. Muszę znaleźć jakiś sposób żeby się tam dostać."
+        },
+        {
+            "id": 5,
+            "name": "Przeszukaj stodołę",
+            "description": "Udało mi się przejść, teraz muszę znaleźć tu jakąś wskazówkę."
+        },
+        {
+            "id": 6,
+            "name": "Wykop podejrzany kopiec",
+            "description": "Za stodołą znajduje się świeży kopiec. Muszę go jakoś odkopać."
+        }
     ]
 }

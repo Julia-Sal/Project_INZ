@@ -81,7 +81,6 @@
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\collider.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDoor.cs" />
-    <Compile Include="Assets\Scripts\Quests\QusetList\0\Trigger0.cs" />
     <Compile Include="Assets\Scripts\Quests\EndQuest.cs" />
     <Compile Include="Assets\Scripts\Quests\QusetList\3\QuestLogic3.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
@@ -113,10 +112,21 @@
     <Compile Include="Assets\Scripts\Save\SaveQuests.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenInformativeDialog.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\AnimationOffset.cs" />
-    <Compile Include="Assets\Scripts\Quests\QusetList\QuestSettings.cs" />
     <Compile Include="Assets\Scripts\Control\SettingsController.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
+    <Compile Include="Assets\Scripts\Quests\StartQuestTrigger.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\0\EndQuest0.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\3\EndQuest3.cs" />
+    <Compile Include="Assets\Scripts\Control\Interaction\StartQuestNow.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\1\QuestLogic1.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\2\QuestLogic2.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\1\EndQuest1.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\4\QuestLogic4.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\4\EndQuest4.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\5\EndQuest5.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\6\EndQuest6.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\6\QuestLogic6.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

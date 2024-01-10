@@ -10,7 +10,7 @@ public class StartQuest : MonoBehaviour
     }
 
     public void StartQuestAfterDialogue() {
-
+        StartQuestNormal();
     }
 
     private void OnMouseDown() {

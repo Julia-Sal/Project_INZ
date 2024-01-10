@@ -12,5 +12,14 @@ public class OpenDialog : MonoBehaviour, InteractionInterface
         if (gameObject.GetComponent<StartQuest>() != null) {
             gameObject.GetComponent<StartQuest>().StartQuestAfterDialogue();
         }
+
+        if (gameObject.GetComponent<StartQuestTrigger>() != null){
+            StartQuestTrigger startQuestTrigger = gameObject.GetComponent<StartQuestTrigger>();
+            startQuestTrigger.StartTrigger(startQuestTrigger.questTrigger, startQuestTrigger.questsParent);
+        }
+
+        if (gameObject.GetComponent<EndQuest>() != null) {
+            gameObject.GetComponent<EndQuest>().EndQuestNormal();
+        }
     }
 }

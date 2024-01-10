@@ -44,6 +44,13 @@
 			  "text": "Beeeebh?",
 			  "canShow": true,
 			  "nextDialog": 0
+			},
+			{
+			  "id": 7,
+			  "speaker": "Me",
+			  "text": "Za tym płotem widać stodołę",
+			  "canShow": true,
+			  "nextDialog": 0
 			}
 		]
 	    }
