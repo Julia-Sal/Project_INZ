@@ -5,9 +5,20 @@ using UnityEngine;
 public class QuestLogic6 : MonoBehaviour
 {
     public GameObject mound;
-    //dodaj do mapy trigger, przy pojawieniu siê ma wykonaæ tego questa
+    public GameObject item;
+    public string name;
+    public GameObject endQuest;
 
     void Start() {
-        //dodaj do niej endQuest gdy zostanie wykopany
+        InteractiveObjectSpawnItem interactiveObjectSpawnItem = mound.AddComponent<InteractiveObjectSpawnItem>();
+        interactiveObjectSpawnItem.item = item;
+        interactiveObjectSpawnItem.name = name;
+
+        EndQuest6 endQuest6 = mound.AddComponent<EndQuest6>();
+        endQuest6.item = item;
+        endQuest6.name = name;
+        endQuest6.endQuest = endQuest;
+
+        
     }
 }

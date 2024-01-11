@@ -14,6 +14,7 @@ public class SaveDialogState
 
         dialogList.Add(new DialogData { npcName = "chief", dialogNumber = 0 });
         dialogList.Add(new DialogData { npcName = "cook", dialogNumber = 0 });
+        dialogList.Add(new DialogData { npcName = "specialSheep", dialogNumber = 0 });
 
         DialogDataList dialogDataList = new DialogDataList
         {

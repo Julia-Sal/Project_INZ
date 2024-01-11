@@ -12,7 +12,6 @@ public class EndQuest : MonoBehaviour
     {
         QuestManager manager = questManager.GetComponent<QuestManager>();
         manager.EndQuest(id);
-
         quest.SetActive(false);
 
     }

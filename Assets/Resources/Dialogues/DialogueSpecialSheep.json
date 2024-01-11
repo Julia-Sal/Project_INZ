@@ -1,0 +1,27 @@
+{
+  "dialogs": [
+    {
+      "id": 0,
+      "dialogList": [
+        {
+          "id": 1,
+          "speaker": "Owca",
+          "text": "Beeeebh?",
+          "nextDialog": 0
+        }
+		]
+    },
+	{
+	"id": 1,
+	"dialogList": [
+    {
+      "id": 1,
+      "speaker": "Owca",
+      "text": "W końcu przyszedłeś.",
+      "nextDialog": 0
+    }
+	]
+	}
+
+  ]
+}

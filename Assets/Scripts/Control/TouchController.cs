@@ -52,7 +52,12 @@ public class TouchController : MonoBehaviour
                         itemGotAddedToInventory();
                         selectedObject.GetComponent<Pickup>().resetPickup();
                         break;
-                    }              
+                    }
+                    else if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer)) {
+                        //czy zosta³ z³apany podczas ruchu
+                        ItemGotGrabbed(touch, hit);
+                        break;
+                    }
                     break;
                     
                 case TouchPhase.Ended:

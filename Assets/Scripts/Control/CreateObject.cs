@@ -11,6 +11,8 @@ public class CreateObject : MonoBehaviour
             if (child.name == childName) {
                 child.gameObject.SetActive(true);
                 child.position = targetPosition;
+
+
             }
         }
 

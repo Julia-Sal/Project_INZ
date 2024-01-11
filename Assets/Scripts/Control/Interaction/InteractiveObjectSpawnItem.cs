@@ -9,11 +9,10 @@ public class InteractiveObjectSpawnItem : MonoBehaviour
 
 
     public void OnTriggerEnter(Collider other) {
-        if (other.GetComponent<Pickup>() != null && other.GetComponent<Pickup>().item.id == item.GetComponent<Pickup>().item.id && gameObject.layer == 10) {
+        if (other.GetComponent<Pickup>() != null && other.GetComponent<Pickup>().item.id == item.GetComponent<Pickup>().item.id) {
             Vector3 targetPosition = gameObject.transform.position;
             CreateObject createObject = new CreateObject();
             createObject.generateObject(targetPosition, name);
-            gameObject.layer = 12;
         }
     }
 }

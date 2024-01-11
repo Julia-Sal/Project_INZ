@@ -11,6 +11,7 @@ public class InventoryController : MonoBehaviour
     private GameObject objectFromInventory;
     public Transform parent;
     public int slotIndex;
+    public bool isDragged = false;
 
     public void OnPointerExit() {
         if (!checkIfSlotIsEmpty()) {
@@ -20,10 +21,10 @@ public class InventoryController : MonoBehaviour
     }
 
     private void takeItemFromInventory() {
-        
         if (Input.touchCount > 0) {
             Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved) {
+           
+            if (touch.phase == TouchPhase.Moved && !isDragged) {
                 Vector3 touchPos = new Vector3(touch.position.x, touch.position.y, 0);
                 Ray ray = Camera.main.ScreenPointToRay(touchPos);
                 
@@ -41,6 +42,17 @@ public class InventoryController : MonoBehaviour
                     SaveInventory saveInventory = new SaveInventory();
                     saveInventory.DeleteItemFromInventory(slotIndex);
                 }
+            } 
+            
+        }
+        
+    }
+
+    void Update() {
+        if (Input.touchCount > 0) {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Ended) { 
+                isDragged = false;
             }
         }
     }
@@ -53,11 +65,12 @@ public class InventoryController : MonoBehaviour
     }
 
     public void OnPointerEnter(){
-        
         if (lastDragged.id != 0 && checkIfSlotIsEmpty()) {
             itemInInventory = lastDragged.item;
             setImage(lastDragged);
             lastDragged.id = 0;
+            isDragged = true;
+
             SaveInventory saveInventory = new SaveInventory();
             saveInventory.SaveItemData(itemInInventory.name, slotIndex); 
         }

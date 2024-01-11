@@ -17,7 +17,7 @@ public class SetNewDialogue : MonoBehaviour
         SetDialogue();
     }
 
-    private void SetDialogue()
+    public void SetDialogue()
     {
         if (newDialogueNumber != 0 && npcName != null)
         {

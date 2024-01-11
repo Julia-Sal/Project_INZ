@@ -34,6 +34,11 @@
             "id": 6,
             "name": "Wykop podejrzany kopiec",
             "description": "Za stodołą znajduje się świeży kopiec. Muszę go jakoś odkopać."
-        }
+        },
+        {
+            "id": 7,
+            "name": "Rozwiąż tajemnicę mapy",
+            "description": "Wykopałem jakąś mapę, ale jej zawartość jest nie jasna. Co oznaczają te znaki? [Aby otworzyć przedmiot kliknij na niego gdy znajduje się w ekwipunku]"
+        }	
     ]
 }
