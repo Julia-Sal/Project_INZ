@@ -14,13 +14,13 @@ public class InventoryController : MonoBehaviour
     public bool isDragged = false;
 
     public void OnPointerExit() {
-        if (!checkIfSlotIsEmpty()) {
+        if (!CheckIfSlotIsEmpty()) {
             objectFromInventory = itemInInventory;
-            takeItemFromInventory();
+            TakeItemFromInventory();
         }       
     }
 
-    private void takeItemFromInventory() {
+    private void TakeItemFromInventory() {
         if (Input.touchCount > 0) {
             Touch touch = Input.GetTouch(0);
            
@@ -57,7 +57,7 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    public void setImage(Item lastDragged){
+    public void SetImage(Item lastDragged){
         if (image != null && lastDragged != null && itemInInventory != null) {
             SpriteRenderer itemSpriteRenderer = itemInInventory.GetComponentInChildren<SpriteRenderer>();
             image.sprite = itemSpriteRenderer.sprite;
@@ -65,9 +65,9 @@ public class InventoryController : MonoBehaviour
     }
 
     public void OnPointerEnter(){
-        if (lastDragged.id != 0 && checkIfSlotIsEmpty()) {
+        if (lastDragged.id != 0 && CheckIfSlotIsEmpty()) {
             itemInInventory = lastDragged.item;
-            setImage(lastDragged);
+            SetImage(lastDragged);
             lastDragged.id = 0;
             isDragged = true;
 
@@ -78,7 +78,7 @@ public class InventoryController : MonoBehaviour
         
     }
 
-    public bool checkIfSlotIsEmpty() {
+    public bool CheckIfSlotIsEmpty() {
         return image.sprite.Equals(defaultSprite);
     }
 

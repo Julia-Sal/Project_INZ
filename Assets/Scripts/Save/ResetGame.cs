@@ -7,7 +7,7 @@ public class ResetGame : MonoBehaviour
 
     public void StartNewGame() {
         DeleteFiles();
-        SceneManager.LoadScene("Town");
+        SceneManager.LoadScene("game");
     }
 
 

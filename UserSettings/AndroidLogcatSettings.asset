@@ -1,53 +1,41 @@
 {
     "m_SelectedDeviceId": "RF8RB0BH74R",
     "m_SelectedPackage": {
-        "deviceId": "RF8RB0BH74R",
-        "name": "com.DefaultCompany.GamePA",
-        "processId": 10682,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "RF8RB0BH74R",
-            "name": "com.teslacoilsw.launcher",
-            "processId": 27336,
-            "exited": false
-        },
-        {
-            "deviceId": "RF8RB0BH74R",
-            "name": "com.DefaultCompany.GamePA",
-            "processId": 21186,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8RB0BH74R",
-            "name": "com.DefaultCompany.GamePA",
-            "processId": 22913,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8RB0BH74R",
-            "name": "com.DefaultCompany.GamePA",
-            "processId": 27215,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8RB0BH74R",
-            "name": "com.DefaultCompany.GamePA",
-            "processId": 3429,
-            "exited": true
-        },
-        {
-            "deviceId": "RF8RB0BH74R",
             "name": "com.google.android.apps.nbu.files",
             "processId": 22001,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "RF8RB0BH74R",
             "name": "com.DefaultCompany.GamePA",
             "processId": 10682,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8RB0BH74R",
+            "name": "com.DefaultCompany.GamePA",
+            "processId": 28878,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8RB0BH74R",
+            "name": "com.DefaultCompany.GamePA",
+            "processId": 8521,
+            "exited": true
+        },
+        {
+            "deviceId": "RF8RB0BH74R",
+            "name": "com.unity3d.mobileremote",
+            "processId": 7899,
             "exited": false
         }
     ],

@@ -84,13 +84,16 @@
     <Compile Include="Assets\Scripts\Quests\QusetList\6\EndQuest6.cs" />
     <Compile Include="Assets\Scripts\Control\CreateObject.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\7\QuestLogic7.cs" />
     <Compile Include="Assets\collider.cs" />
     <Compile Include="Assets\Scripts\Control\Interaction\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\Quests\EndQuest.cs" />
     <Compile Include="Assets\Scripts\Quests\QusetList\3\QuestLogic3.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Scripts\Quests\SetNewDialogue.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\3\Trigger3.cs" />
     <Compile Include="Assets\Scripts\Quests\StartQuest.cs" />
+    <Compile Include="Assets\Scripts\Quests\QusetList\7\SpecialSheep.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\Quests\QusetList\2\QuestLogic2.cs" />
     <Compile Include="Assets\Scripts\Quests\QusetList\6\QuestLogic6.cs" />
@@ -127,9 +130,6 @@
     <Compile Include="Assets\Scripts\Control\SettingsController.cs" />
     <Compile Include="Assets\Scripts\MC_scripts\McAnimBehaviour.cs" />
     <Compile Include="Assets\Scripts\Environment_scripts\SetParentName.cs" />
-    <Compile Include="Assets\Scripts\Quests\QusetList\3\Trigger3.cs" />
-    <Compile Include="Assets\Scripts\Quests\QusetList\7\QuestLogic7.cs" />
-    <Compile Include="Assets\Scripts\Quests\QusetList\7\SpecialSheep.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

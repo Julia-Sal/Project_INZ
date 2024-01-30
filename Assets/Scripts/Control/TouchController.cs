@@ -45,16 +45,14 @@ public class TouchController : MonoBehaviour
 
                 case TouchPhase.Moved:
                     if (lastDragged.id != 0 && hit.collider != null) {
-                        moveObject(touch, hit);
+                        MoveObject(touch, hit);
                         break;
                     }
                     else if (selectedObject != null) {
-                        itemGotAddedToInventory();
-                        selectedObject.GetComponent<Pickup>().resetPickup();
+                        ItemGotAddedToInventory();
                         break;
                     }
                     else if (Physics.Raycast(ray, out hit, Mathf.Infinity, itemLayer)) {
-                        //czy zosta³ z³apany podczas ruchu
                         ItemGotGrabbed(touch, hit);
                         break;
                     }
@@ -62,8 +60,7 @@ public class TouchController : MonoBehaviour
                     
                 case TouchPhase.Ended:
                     if (isMoving && selectedObject != null) {
-                        selectedObject.GetComponent<Pickup>().resetPickup();
-                        itemGotMoved(touch);
+                        ItemGotMoved();
                     }
                     break;
             }
@@ -77,11 +74,9 @@ public class TouchController : MonoBehaviour
         if (selectedObject.CompareTag("Item")) {
                 touchStartPos = new Vector3(touch.position.x, 0, touch.position.y);
                 objectStartPos = selectedObject.transform.position;
-                //rb = selectedObject.GetComponent<Rigidbody>();
-                selectedObject.GetComponent<Pickup>().pickup();
+                selectedObject.GetComponent<Pickup>().SetPickup();
                 selectedObject.GetComponent<Collider>().enabled = false;
                 
-
                 isMoving = true;
         }
         else {
@@ -89,7 +84,7 @@ public class TouchController : MonoBehaviour
         }
     }
 
-    private void moveObject(Touch touch, RaycastHit hit)
+    private void MoveObject(Touch touch, RaycastHit hit)
     {
         if (isMoving && selectedObject != null)
         {
@@ -104,15 +99,17 @@ public class TouchController : MonoBehaviour
         }
     }
 
-    private void itemGotMoved(Touch touch){
+    private void ItemGotMoved(){
+        selectedObject.GetComponent<Pickup>().ResetPickup();
         selectedObject.GetComponent<Collider>().enabled = true;
             
         selectedObject = null;
         isMoving = false;   
     }
 
-    private void itemGotAddedToInventory(){
+    private void ItemGotAddedToInventory(){
         selectedObject.SetActive(false);
+        selectedObject.GetComponent<Pickup>().ResetPickup();
     }
 
 
